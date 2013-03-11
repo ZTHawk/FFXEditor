@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OverdrivesPanel</class>
+ <widget class="QWidget" name="OverdrivesPanel">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>457</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string notr="true">Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QLabel{
+	background-color: white;
+	padding: 2 2 2 2;
+}</string>
+  </property>
+  <widget class="MyLabel" name="od_tidus_Text">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>7</y>
+     <width>170</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="od_auron_Text">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>7</y>
+     <width>170</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="od_wakka_Text">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>7</y>
+     <width>170</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="od_kimahri_Text">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>126</y>
+     <width>170</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="od_lulu_Text">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>126</y>
+     <width>170</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="od_rikku_Text">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>126</y>
+     <width>170</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="od_tidus">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>30</y>
+     <width>170</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>MS Sans Serif</family>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QListWidget{background-color: rgba(255, 255, 255, 0);}
+QListWidget::item{background-color: rgba(233, 233, 233, 220);}
+QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="selectionBehavior">
+    <enum>QAbstractItemView::SelectRows</enum>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="od_auron">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>30</y>
+     <width>170</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>MS Sans Serif</family>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QListWidget{background-color: rgba(255, 255, 255, 0);}
+QListWidget::item{background-color: rgba(233, 233, 233, 220);}
+QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="selectionBehavior">
+    <enum>QAbstractItemView::SelectRows</enum>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="od_wakka">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>30</y>
+     <width>170</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>MS Sans Serif</family>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QListWidget{background-color: rgba(255, 255, 255, 0);}
+QListWidget::item{background-color: rgba(233, 233, 233, 220);}
+QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="selectionBehavior">
+    <enum>QAbstractItemView::SelectRows</enum>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="od_kimahri">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>149</y>
+     <width>170</width>
+     <height>184</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>MS Sans Serif</family>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QListWidget{background-color: rgba(255, 255, 255, 0);}
+QListWidget::item{background-color: rgba(233, 233, 233, 220);}
+QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="selectionBehavior">
+    <enum>QAbstractItemView::SelectRows</enum>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="od_lulu">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>149</y>
+     <width>170</width>
+     <height>291</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>MS Sans Serif</family>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QListWidget{background-color: rgba(255, 255, 255, 0);}
+QListWidget::item{background-color: rgba(233, 233, 233, 220);}
+QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="selectionBehavior">
+    <enum>QAbstractItemView::SelectRows</enum>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="od_rikku">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>149</y>
+     <width>170</width>
+     <height>291</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>MS Sans Serif</family>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QListWidget{background-color: rgba(255, 255, 255, 0);}
+QListWidget::item{background-color: rgba(233, 233, 233, 220);}
+QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="selectionBehavior">
+    <enum>QAbstractItemView::SelectRows</enum>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyLabel</class>
+   <extends>QLabel</extends>
+   <header>MyLabel.hpp</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

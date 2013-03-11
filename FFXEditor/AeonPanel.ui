@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AeonPanel</class>
+ <widget class="QWidget" name="AeonPanel">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>457</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string notr="true">Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QLabel{
+	background-color: white;
+	padding: 2 2 2 2;
+}
+QLineEdit{
+	background-color: rgba(233, 233, 233, 220);
+}</string>
+  </property>
+  <widget class="QLineEdit" name="luck_add">
+   <property name="geometry">
+    <rect>
+     <x>586</x>
+     <y>78</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="attack_Text">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>55</y>
+     <width>181</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="speed_add">
+   <property name="geometry">
+    <rect>
+     <x>586</x>
+     <y>52</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="overdrive_max">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>230</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="magic_add">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>104</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="mp_add">
+   <property name="geometry">
+    <rect>
+     <x>279</x>
+     <y>193</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="defense_add">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>78</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="attack_add">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>52</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="hit_cur">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>130</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="defense_Text">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>81</y>
+     <width>181</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="speed_Text">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>55</y>
+     <width>161</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="evade_cur">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>104</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="magic_Text">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>107</y>
+     <width>181</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="hp_Text">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>170</y>
+     <width>121</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="magicDef_cur">
+   <property name="geometry">
+    <rect>
+     <x>184</x>
+     <y>130</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="enemys_Text">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>170</y>
+     <width>131</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="enemys">
+   <property name="geometry">
+    <rect>
+     <x>546</x>
+     <y>167</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="magic_cur">
+   <property name="geometry">
+    <rect>
+     <x>184</x>
+     <y>104</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="mp_max">
+   <property name="geometry">
+    <rect>
+     <x>213</x>
+     <y>193</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="hit_add">
+   <property name="geometry">
+    <rect>
+     <x>586</x>
+     <y>130</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="hit_Text">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>133</y>
+     <width>161</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="evade_Text">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>107</y>
+     <width>161</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="magicDef_add">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>130</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="deaths">
+   <property name="geometry">
+    <rect>
+     <x>546</x>
+     <y>193</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="hp_add">
+   <property name="geometry">
+    <rect>
+     <x>279</x>
+     <y>167</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="hp_cur">
+   <property name="geometry">
+    <rect>
+     <x>147</x>
+     <y>167</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="magicDef_Text">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>133</y>
+     <width>181</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="mp_Text">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>196</y>
+     <width>121</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="luck_cur">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>78</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="deaths_Text">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>196</y>
+     <width>131</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="battles_revive">
+   <property name="geometry">
+    <rect>
+     <x>153</x>
+     <y>267</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="speed_cur">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>52</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="overdrive_cur">
+   <property name="geometry">
+    <rect>
+     <x>153</x>
+     <y>230</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="luck_Text">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>81</y>
+     <width>161</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="mp_cur">
+   <property name="geometry">
+    <rect>
+     <x>147</x>
+     <y>193</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="overdrive_Text">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>233</y>
+     <width>151</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="defense_cur">
+   <property name="geometry">
+    <rect>
+     <x>184</x>
+     <y>78</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="hp_max">
+   <property name="geometry">
+    <rect>
+     <x>213</x>
+     <y>167</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="battles_revive_Text">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>270</y>
+     <width>151</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="attack_cur">
+   <property name="geometry">
+    <rect>
+     <x>184</x>
+     <y>52</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="evade_add">
+   <property name="geometry">
+    <rect>
+     <x>586</x>
+     <y>104</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="available">
+   <property name="geometry">
+    <rect>
+     <x>7</x>
+     <y>29</y>
+     <width>72</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">CheckBox</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="ability_Text">
+   <property name="geometry">
+    <rect>
+     <x>367</x>
+     <y>233</y>
+     <width>131</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="abilityList">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>253</y>
+     <width>256</width>
+     <height>201</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>MS Sans Serif</family>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QListWidget{background-color: rgba(255, 255, 255, 0);}
+QListWidget::item{background-color: rgba(233, 233, 233, 220);}
+QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="selectionBehavior">
+    <enum>QAbstractItemView::SelectRows</enum>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="button_ifrit">
+   <property name="geometry">
+    <rect>
+     <x>66</x>
+     <y>4</y>
+     <width>58</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">if</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="button_anima">
+   <property name="geometry">
+    <rect>
+     <x>314</x>
+     <y>4</y>
+     <width>58</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">a</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="button_shiva">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>4</y>
+     <width>58</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">sh</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="button_valefor">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>4</y>
+     <width>58</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">v</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="button_yojimbo">
+   <property name="geometry">
+    <rect>
+     <x>376</x>
+     <y>4</y>
+     <width>58</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">y</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="button_bahamut">
+   <property name="geometry">
+    <rect>
+     <x>252</x>
+     <y>4</y>
+     <width>58</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">b</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="button_ixion">
+   <property name="geometry">
+    <rect>
+     <x>128</x>
+     <y>4</y>
+     <width>58</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">ix</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="button_dug">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>4</y>
+     <width>58</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">d</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="button_rug">
+   <property name="geometry">
+    <rect>
+     <x>562</x>
+     <y>4</y>
+     <width>58</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">r</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="button_mug">
+   <property name="geometry">
+    <rect>
+     <x>438</x>
+     <y>4</y>
+     <width>58</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">m</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyLabel</class>
+   <extends>QLabel</extends>
+   <header>MyLabel.hpp</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

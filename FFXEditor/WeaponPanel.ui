@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>WeaponPanel</class>
+ <widget class="QWidget" name="WeaponPanel">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>457</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string notr="true">Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QLabel{
+	background-color: white;
+	padding: 2 2 2 2;
+	text-align: left;
+}
+QLineEdit{
+	background-color: rgba(233, 233, 233, 220);
+}</string>
+  </property>
+  <widget class="QListWidget" name="slotSelection">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>4</y>
+     <width>181</width>
+     <height>451</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>MS Sans Serif</family>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QListWidget{background-color: rgba(255, 255, 255, 0);}
+QListWidget::item{background-color: rgba(233, 233, 233, 220);}
+QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="weaponType_Text">
+   <property name="geometry">
+    <rect>
+     <x>198</x>
+     <y>33</y>
+     <width>111</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="weaponName_Text">
+   <property name="geometry">
+    <rect>
+     <x>198</x>
+     <y>63</y>
+     <width>111</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="available">
+   <property name="geometry">
+    <rect>
+     <x>201</x>
+     <y>4</y>
+     <width>70</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="text">
+    <string notr="true">CheckBox</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="equippedChar_Text">
+   <property name="geometry">
+    <rect>
+     <x>198</x>
+     <y>116</y>
+     <width>111</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="damageType_Text">
+   <property name="geometry">
+    <rect>
+     <x>198</x>
+     <y>146</y>
+     <width>111</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="attack_Text">
+   <property name="geometry">
+    <rect>
+     <x>198</x>
+     <y>184</y>
+     <width>121</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="weaponModel_Text">
+   <property name="geometry">
+    <rect>
+     <x>198</x>
+     <y>222</y>
+     <width>111</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="slotCnt_Text">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>255</y>
+     <width>111</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="ability1_Text">
+   <property name="geometry">
+    <rect>
+     <x>198</x>
+     <y>300</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="ability2_Text">
+   <property name="geometry">
+    <rect>
+     <x>422</x>
+     <y>300</y>
+     <width>91</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="ability3_Text">
+   <property name="geometry">
+    <rect>
+     <x>198</x>
+     <y>335</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="ability4_Text">
+   <property name="geometry">
+    <rect>
+     <x>422</x>
+     <y>335</y>
+     <width>91</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="armorWeapon">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>48</y>
+     <width>106</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="text">
+    <string notr="true">CheckBox</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="weaponType">
+   <property name="geometry">
+    <rect>
+     <x>313</x>
+     <y>30</y>
+     <width>121</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maxVisibleItems">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="weaponName">
+   <property name="geometry">
+    <rect>
+     <x>313</x>
+     <y>60</y>
+     <width>121</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maxVisibleItems">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="equippedChar">
+   <property name="geometry">
+    <rect>
+     <x>313</x>
+     <y>113</y>
+     <width>121</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maxVisibleItems">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="damageType">
+   <property name="geometry">
+    <rect>
+     <x>313</x>
+     <y>143</y>
+     <width>191</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maxVisibleItems">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="critHit_Text">
+   <property name="geometry">
+    <rect>
+     <x>422</x>
+     <y>184</y>
+     <width>91</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="attack">
+   <property name="geometry">
+    <rect>
+     <x>313</x>
+     <y>181</y>
+     <width>50</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="critHit">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>181</y>
+     <width>50</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="weaponModelIndex">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>219</y>
+     <width>50</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="weaponModel">
+   <property name="geometry">
+    <rect>
+     <x>313</x>
+     <y>219</y>
+     <width>191</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="maxVisibleItems">
+    <number>30</number>
+   </property>
+   <property name="duplicatesEnabled">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="slotCnt">
+   <property name="geometry">
+    <rect>
+     <x>313</x>
+     <y>252</y>
+     <width>121</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maxVisibleItems">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="ability1">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>297</y>
+     <width>121</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maxVisibleItems">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="ability2">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>297</y>
+     <width>121</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maxVisibleItems">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="ability3">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>332</y>
+     <width>121</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maxVisibleItems">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="ability4">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>332</y>
+     <width>121</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maxVisibleItems">
+    <number>30</number>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyLabel</class>
+   <extends>QLabel</extends>
+   <header>MyLabel.hpp</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

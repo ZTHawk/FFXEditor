@@ -1,0 +1,1370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CharPanelData</class>
+ <widget class="QWidget" name="CharPanelData">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>431</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string notr="true">Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QLabel{
+	background-color: white;
+	padding: 2 2 2 2;
+}
+QLineEdit{
+	background-color: rgba(233, 233, 233, 220);
+}</string>
+  </property>
+  <widget class="MyLabel" name="attack_Text">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>8</y>
+     <width>181</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="defense_Text">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>34</y>
+     <width>181</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="magic_Text">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>60</y>
+     <width>181</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="magicDef_Text">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>86</y>
+     <width>181</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="speed_Text">
+   <property name="geometry">
+    <rect>
+     <x>366</x>
+     <y>8</y>
+     <width>161</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="luck_Text">
+   <property name="geometry">
+    <rect>
+     <x>366</x>
+     <y>34</y>
+     <width>161</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="evade_Text">
+   <property name="geometry">
+    <rect>
+     <x>366</x>
+     <y>60</y>
+     <width>161</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="hit_Text">
+   <property name="geometry">
+    <rect>
+     <x>366</x>
+     <y>86</y>
+     <width>161</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="hp_Text">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>124</y>
+     <width>121</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="mp_Text">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>150</y>
+     <width>121</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="curAP_Text">
+   <property name="geometry">
+    <rect>
+     <x>397</x>
+     <y>124</y>
+     <width>131</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="AP_got_till_next_lvl_Text">
+   <property name="geometry">
+    <rect>
+     <x>397</x>
+     <y>150</y>
+     <width>131</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="overdrive_Text">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>190</y>
+     <width>161</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="s_lv_Text">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>220</y>
+     <width>161</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="battles_Text">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>263</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="enemys_Text">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>263</y>
+     <width>91</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="deaths_Text">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>263</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="overdrive_modes_Text">
+   <property name="geometry">
+    <rect>
+     <x>3</x>
+     <y>295</y>
+     <width>561</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="overdrive_warrior_Text">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>312</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="overdrive_victim_Text">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>338</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="overdrive_hero_Text">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>364</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="overdrive_ally_Text">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>390</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="overdrive_comrade_Text">
+   <property name="geometry">
+    <rect>
+     <x>164</x>
+     <y>312</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="overdrive_dancer_Text">
+   <property name="geometry">
+    <rect>
+     <x>164</x>
+     <y>338</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="overdrive_rook_Text">
+   <property name="geometry">
+    <rect>
+     <x>164</x>
+     <y>364</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="overdrive_sufferer_Text">
+   <property name="geometry">
+    <rect>
+     <x>164</x>
+     <y>390</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="overdrive_healer_Text">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>312</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="overdrive_avenger_Text">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>338</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="overdrive_victor_Text">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>364</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="overdrive_daredevil_Text">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>390</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="overdrive_tactician_Text">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>312</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="overdrive_slayer_Text">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>338</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="overdrive_coward_Text">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>364</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="overdrive_solo_Text">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>390</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="attack_basic">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>5</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="attack_current">
+   <property name="geometry">
+    <rect>
+     <x>244</x>
+     <y>5</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="defense_basic">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>31</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="defense_current">
+   <property name="geometry">
+    <rect>
+     <x>244</x>
+     <y>31</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="magic_basic">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>57</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="magic_current">
+   <property name="geometry">
+    <rect>
+     <x>244</x>
+     <y>57</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="magicDef_basic">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>83</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="magicDef_current">
+   <property name="geometry">
+    <rect>
+     <x>244</x>
+     <y>83</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="speed_basic">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>5</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="speed_current">
+   <property name="geometry">
+    <rect>
+     <x>584</x>
+     <y>5</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="luck_basic">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>31</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="luck_current">
+   <property name="geometry">
+    <rect>
+     <x>584</x>
+     <y>31</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="evade_basic">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>57</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="evade_current">
+   <property name="geometry">
+    <rect>
+     <x>584</x>
+     <y>57</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="hit_basic">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>83</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="hit_current">
+   <property name="geometry">
+    <rect>
+     <x>584</x>
+     <y>83</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="hp_current">
+   <property name="geometry">
+    <rect>
+     <x>126</x>
+     <y>121</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="hp_max">
+   <property name="geometry">
+    <rect>
+     <x>192</x>
+     <y>121</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="hp_max_base">
+   <property name="geometry">
+    <rect>
+     <x>258</x>
+     <y>121</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="mp_current">
+   <property name="geometry">
+    <rect>
+     <x>126</x>
+     <y>147</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="mp_max">
+   <property name="geometry">
+    <rect>
+     <x>192</x>
+     <y>147</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="mp_max_base">
+   <property name="geometry">
+    <rect>
+     <x>258</x>
+     <y>147</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="curAP">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>121</y>
+     <width>94</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="AP_got_till_next_lvl">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>147</y>
+     <width>94</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="overdrive_current">
+   <property name="geometry">
+    <rect>
+     <x>166</x>
+     <y>190</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="overdrive_max">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>190</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="s_lv_current">
+   <property name="geometry">
+    <rect>
+     <x>166</x>
+     <y>220</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="s_lv_used">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>220</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="battles">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>260</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="enemys">
+   <property name="geometry">
+    <rect>
+     <x>332</x>
+     <y>260</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="deaths">
+   <property name="geometry">
+    <rect>
+     <x>542</x>
+     <y>260</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="overdrive_warrior">
+   <property name="geometry">
+    <rect>
+     <x>75</x>
+     <y>309</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="overdrive_victim">
+   <property name="geometry">
+    <rect>
+     <x>75</x>
+     <y>335</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="overdrive_hero">
+   <property name="geometry">
+    <rect>
+     <x>75</x>
+     <y>361</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="overdrive_ally">
+   <property name="geometry">
+    <rect>
+     <x>75</x>
+     <y>387</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="overdrive_comrade">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>309</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="overdrive_dancer">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>335</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="overdrive_rook">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>361</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="overdrive_sufferer">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>387</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="overdrive_healer">
+   <property name="geometry">
+    <rect>
+     <x>405</x>
+     <y>309</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="overdrive_avenger">
+   <property name="geometry">
+    <rect>
+     <x>405</x>
+     <y>335</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="overdrive_victor">
+   <property name="geometry">
+    <rect>
+     <x>405</x>
+     <y>361</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="overdrive_daredevil">
+   <property name="geometry">
+    <rect>
+     <x>405</x>
+     <y>387</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="overdrive_tactician">
+   <property name="geometry">
+    <rect>
+     <x>582</x>
+     <y>309</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="overdrive_slayer">
+   <property name="geometry">
+    <rect>
+     <x>582</x>
+     <y>335</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="overdrive_coward">
+   <property name="geometry">
+    <rect>
+     <x>582</x>
+     <y>361</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="overdrive_solo">
+   <property name="geometry">
+    <rect>
+     <x>582</x>
+     <y>387</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyLabel</class>
+   <extends>QLabel</extends>
+   <header>MyLabel.hpp</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
