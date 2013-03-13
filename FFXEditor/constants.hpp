@@ -92,6 +92,17 @@ const static CHAR_BASIC_ATTRIBUTES char_basic_sttributes[] =
 	{10, 8, 10, 8, 16, 18, 5, 5}
 };
 
+enum LANGUAGE_VERSIONS
+{
+	LANG_UNKNOWN = 0,
+	LANG_DE = 1,
+	LANG_EN = 2,
+	LANG_ES = 3,
+	LANG_INT = 4,
+	LANG_US = 5,
+	LANG_JP = 6,
+};
+
 enum INFO
 {
 	INFO_GLOBAL,

@@ -111,6 +111,19 @@ void FFXEditor::init( )
 				&& tmpOffset != BASE_OFFSET_BASE )
 				BASE_OFFSET = tmpOffset + SEARCH_BYTES_ARRAY_2_LEN;
 		}
+		
+		// find language
+		unsigned int langPos = findOffsetOfByteArray(langVersionArray, LANGVERSION_ARRAY_LEN, BASE_OFFSET_BASE + LANGVERSION_SEARCH_OFFSET, BASE_OFFSET_BASE);
+		if ( langPos != 0 )
+		{
+			langPos += LANGVERSION_SUBSEARCH_OFFSET;
+			char *cStr = new char[10];
+			memMng->read(langPos, cStr, 10);
+			std::string langIdentifier(cStr, 10);
+			delete cStr;
+			if ( langIdentifier.compare(0, 4, "SLUS") == 0 )
+				langVersion = LANG_US;
+		}
 	}
 	initData();
 }

@@ -35,6 +35,38 @@ static const unsigned char seachBytesArray2[SEARCH_BYTES_ARRAY_2_LEN] =
 	0x00
 };
 
+#define LANGVERSION_ARRAY_LEN 21
+#define LANGVERSION_SEARCH_OFFSET -50000
+#define LANGVERSION_SUBSEARCH_OFFSET -30
+static const unsigned char langVersionArray[LANGVERSION_ARRAY_LEN] =
+{
+	'a',
+	't',
+	'e',
+	'l',
+	's',
+	'a',
+	'v',
+	'e',
+	'r',
+	'a',
+	'm',
+	'0',
+	'0',
+	'0',
+	'5',
+	'2',
+	'0',
+	'.',
+	'd',
+	'a',
+	't'
+};
+//0x61, 0x74, 0x65, 0x6C, 0x73,
+//0x61, 0x76, 0x65, 0x72, 0x61,
+//0x6D, 0x30, 0x30, 0x30, 0x35,
+//0x32, 0x30, 0x2E, 0x64, 0x61, 0x74
+
 #define BATTLE_DATA_CONTAINER_LEN 4
 #define BATTLE_DATA_CONTAINER_DISTANCE 32
 #define BD_INDENT_LEN 6
@@ -732,6 +764,8 @@ enum BATTLEDATA_OFFSETS
 	BD_OFFSET_SLOW_CNT = 79,
 	BD_OFFSET_CONDITION2_BITMASK = 81, // short
 	BD_OFFSET_TURN_TILL_ACTION = 151,
+	
+	BD_OFFSET_SPECIAL = 12,
 	BD_OFFSET_BATTLE_ACTIVITY = 2051,
 };
 

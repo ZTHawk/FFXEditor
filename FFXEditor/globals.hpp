@@ -14,6 +14,8 @@ extern unsigned int BASE_OFFSET;
 extern unsigned int BASE_OFFSET_BASE;
 extern unsigned int BASE_OFFSET_SPECIAL;
 
+extern unsigned int langVersion;
+
 class FFXEditor;
 extern FFXEditor *mainWindow;
 
