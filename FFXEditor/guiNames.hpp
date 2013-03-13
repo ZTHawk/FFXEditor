@@ -329,53 +329,9 @@ static const char *guiList_en =
 			"Death\\"
 		"Turns till action\\"
 		"Death countdown\\"
-		"Active in battle\\"
 		"Animation speed\\"
 		"Stand at location\\"
 		"Run to location\\"
 	"\0";
-
-/*
-UE makro:
------------------
-
-InsertMode
-ColumnModeOff
-HexOff
-UltraEditReOn
-StartSelect
-Find "Text ="
-Key RIGHT ARROW
-Key RIGHT ARROW
-Key DEL
-UltraEditReOn
-Find """
-Key END
-Key BACKSPACE
-Key LEFT ARROW
-"\\"
-Key HOME
-Key DOWN ARROW
-
-
-
-
-InsertMode
-ColumnModeOff
-HexOff
-UltraEditReOn
-StartSelect
-Find "Text ="
-Key HOME
-Key HOME
-Key DEL
-Find "Text ="
-StartSelect
-Key END
-"setText(QString::fromStdWString(guiList[GN_]));"
-EndSelect
-Key HOME
-Key DOWN ARROW
-*/
 
 #endif // GUI_NAMES_HPP
