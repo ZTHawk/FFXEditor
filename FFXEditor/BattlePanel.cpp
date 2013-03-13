@@ -267,6 +267,17 @@ bool BattlePanel::getVariables( PBATTLEDATA bData )
 	result &= checkEntry(ui.mp_cur, &bData->mp, DATA_UINT);
 	result &= checkEntry(ui.mp_max, &bData->mp_max, DATA_UINT);
 	result &= checkEntry(ui.overdrive_cur, &bData->overdrive, DATA_ATTRIBUTE);
+	result &= checkEntry(ui.deathCountdown_cur, &bData->deathCountDown, DATA_ATTRIBUTE);
+	result &= checkEntry(ui.sleep_cur, &bData->sleepCnt, DATA_ATTRIBUTE);
+	result &= checkEntry(ui.silence_cur, &bData->silenceCnt, DATA_ATTRIBUTE);
+	result &= checkEntry(ui.shell_cur, &bData->shellCnt, DATA_ATTRIBUTE);
+	result &= checkEntry(ui.protect_cur, &bData->protectCnt, DATA_ATTRIBUTE);
+	result &= checkEntry(ui.reflect_cur, &bData->reflectCnt, DATA_ATTRIBUTE);
+	result &= checkEntry(ui.waterIm_cur, &bData->waterImmunityCnt, DATA_ATTRIBUTE);
+	result &= checkEntry(ui.fireIm_cur, &bData->fireImmunityCnt, DATA_ATTRIBUTE);
+	result &= checkEntry(ui.lightIm_cur, &bData->lightningImmunityCnt, DATA_ATTRIBUTE);
+	result &= checkEntry(ui.iceIm_cur, &bData->iceImmunityCnt, DATA_ATTRIBUTE);
+	result &= checkEntry(ui.regen_cur, &bData->regenCnt, DATA_ATTRIBUTE);
 	result &= checkEntry(ui.haste_cur, &bData->hasteCnt, DATA_ATTRIBUTE);
 	result &= checkEntry(ui.slow_cur, &bData->slowCnt, DATA_ATTRIBUTE);
 	result &= checkEntry(ui.turnsTillAction_cur, &bData->turnsTillAction, DATA_ATTRIBUTE);
@@ -275,6 +286,20 @@ bool BattlePanel::getVariables( PBATTLEDATA bData )
 	result &= checkEntry(ui.animSpeed_cur, &bData->animSpeed, DATA_ATTRIBUTE);
 	result &= checkEntry(ui.standAtLoc_cur, &bData->standAtLocation, DATA_ATTRIBUTE);
 	result &= checkEntry(ui.runToLoc_cur, &bData->runToLocation, DATA_ATTRIBUTE);
+	
+	bool newState;
+	bData->conditionMask = 0;
+	bData->conditionMask2 = 0;
+	for ( int i = 0; i < BATTLEDATA_BITMASK_SIZE; ++i )
+	{
+		if ( ui.conditionList->item(i)->checkState() != Qt::Checked )
+			continue;
+		
+		if ( i < BATTLEDATA_BITMASK1_SIZE )
+			bData->conditionMask |= (1<<i);
+		else
+			bData->conditionMask2 |= (1<<(i - BATTLEDATA_BITMASK1_SIZE));
+	}
 	
 	return result;
 }
