@@ -117,13 +117,55 @@ enum GUI_NAMES
 		GN_MP_GIL,
 	GN_BP,
 		GN_BP_UNLOCK,
+		GN_BP_LOCK,
+		GN_BP_RESCAN,
+		GN_BP_ACTIV,
 		GN_BP_HP,
 		GN_BP_MP,
 		GN_BP_OD,
+		GN_BP_SLEEP,
+		GN_BP_SILENCE,
+		GN_BP_SHELL,
+		GN_BP_PROT,
+		GN_BP_REFLEC,
+		GN_BP_WATER,
+		GN_BP_FIRE,
+		GN_BP_LIGHT,
+		GN_BP_ICE,
+		GN_BP_REGEN,
 		GN_BP_HASTE,
 		GN_BP_SLOW,
+		GN_BP_COND,
+			GN_BP_COND_KO,
+			GN_BP_COND_ZOMBIE,
+			GN_BP_COND_PETRI,
+			GN_BP_COND_POISEN,
+			GN_BP_COND_PBREAK,
+			GN_BP_COND_MBREAK,
+			GN_BP_COND_ABREAK,
+			GN_BP_COND_MENBREAK,
+			GN_BP_COND_CONFUSED,
+			GN_BP_COND_BERSERK,
+			GN_BP_COND_PROV,
+			GN_BP_COND_THREAT,
+			
+			GN_BP_COND_SCAN,
+			GN_BP_COND_PDEST,
+			GN_BP_COND_MDEST,
+			GN_BP_COND_SDEST,
+			GN_BP_COND_EMPTY,
+			GN_BP_COND_ADEST,
+			GN_BP_COND_SHIELD,
+			GN_BP_COND_BOOST,
+			GN_BP_COND_DIE,
+			GN_BP_COND_AUTOLIFE,
+			GN_BP_COND_CURSE,
+			GN_BP_COND_DEFEND,
+			GN_BP_COND_GUARD,
+			GN_BP_COND_GUARD2,
+			GN_BP_COND_DEATH,
 		GN_BP_TURNS,
-		GN_BP_ACTIV,
+		GN_BP_DEATH_CD,
 		GN_BP_ANIMSPD,
 		GN_BP_STAND,
 		GN_BP_RUN,
@@ -239,12 +281,54 @@ static const char *guiList_en =
 		"Gil\\"
 	"Battle\\"
 		"Unlock\\"
+		"Lock\\"
+		"Rescan\\"
+		"Active\\"
 		"HP (cur / max)\\"
 		"MP (cur / max)\\"
 		"Overdrive\\"
+		"Sleep\\"
+		"Silence\\"
+		"Shell\\"
+		"Protect\\"
+		"Reflect\\"
+		"Water immunity\\"
+		"Fire immunity\\"
+		"Lightning immunity\\"
+		"Ice immunity\\"
+		"Regen\\"
 		"Haste\\"
 		"Slow\\"
+		"Conditions\\"
+			"KO\\"
+			"Zombie\\"
+			"Petrification\\"
+			"Poisen\\"
+			"Power Break\\"
+			"Magic Break\\"
+			"Armor Break\\"
+			"Mental Break\\"
+			"Confused\\"
+			"Berserk\\"
+			"Provoke\\"
+			"Threaten\\"
+			"Scan\\"
+			"Power Destil.\\"
+			"Mana Destil.\\"
+			"Speed Destil.\\"
+			"-\\"
+			"Ability Destil.\\"
+			"Shield\\"
+			"Boost\\"
+			"Die\\"
+			"Auto-Life\\"
+			"Cursed\\"
+			"Defend\\"
+			"Guard\\"
+			"Guard2\\"
+			"Death\\"
 		"Turns till action\\"
+		"Death countdown\\"
 		"Active in battle\\"
 		"Animation speed\\"
 		"Stand at location\\"

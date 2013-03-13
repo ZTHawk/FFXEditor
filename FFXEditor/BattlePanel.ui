@@ -28,7 +28,7 @@ QLineEdit{
      <x>4</x>
      <y>4</y>
      <width>151</width>
-     <height>131</height>
+     <height>121</height>
     </rect>
    </property>
    <property name="font">
@@ -61,7 +61,7 @@ QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
   <widget class="QLineEdit" name="hp_max">
    <property name="geometry">
     <rect>
-     <x>400</x>
+     <x>370</x>
      <y>27</y>
      <width>60</width>
      <height>20</height>
@@ -80,7 +80,7 @@ QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
   <widget class="QLineEdit" name="hp_cur">
    <property name="geometry">
     <rect>
-     <x>330</x>
+     <x>300</x>
      <y>27</y>
      <width>60</width>
      <height>20</height>
@@ -125,7 +125,7 @@ QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
   <widget class="QLineEdit" name="mp_max">
    <property name="geometry">
     <rect>
-     <x>400</x>
+     <x>370</x>
      <y>57</y>
      <width>60</width>
      <height>20</height>
@@ -144,7 +144,7 @@ QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
   <widget class="QLineEdit" name="mp_cur">
    <property name="geometry">
     <rect>
-     <x>330</x>
+     <x>300</x>
      <y>57</y>
      <width>60</width>
      <height>20</height>
@@ -163,7 +163,7 @@ QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
   <widget class="QLineEdit" name="overdrive_cur">
    <property name="geometry">
     <rect>
-     <x>330</x>
+     <x>300</x>
      <y>87</y>
      <width>40</width>
      <height>20</height>
@@ -184,7 +184,7 @@ QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
     <rect>
      <x>170</x>
      <y>90</y>
-     <width>151</width>
+     <width>120</width>
      <height>16</height>
     </rect>
    </property>
@@ -195,8 +195,8 @@ QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
   <widget class="QLineEdit" name="haste_cur">
    <property name="geometry">
     <rect>
-     <x>344</x>
-     <y>167</y>
+     <x>130</x>
+     <y>287</y>
      <width>40</width>
      <height>20</height>
     </rect>
@@ -214,9 +214,9 @@ QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
   <widget class="MyLabel" name="haste_Text">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>170</y>
-     <width>181</width>
+     <x>4</x>
+     <y>290</y>
+     <width>120</width>
      <height>16</height>
     </rect>
    </property>
@@ -227,9 +227,9 @@ QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
   <widget class="MyLabel" name="slow_Text">
    <property name="geometry">
     <rect>
-     <x>176</x>
-     <y>203</y>
-     <width>181</width>
+     <x>190</x>
+     <y>290</y>
+     <width>120</width>
      <height>16</height>
     </rect>
    </property>
@@ -240,8 +240,8 @@ QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
   <widget class="QLineEdit" name="slow_cur">
    <property name="geometry">
     <rect>
-     <x>350</x>
-     <y>200</y>
+     <x>320</x>
+     <y>287</y>
      <width>40</width>
      <height>20</height>
     </rect>
@@ -259,8 +259,8 @@ QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
   <widget class="QLineEdit" name="turnsTillAction_cur">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>240</y>
+     <x>130</x>
+     <y>350</y>
      <width>40</width>
      <height>20</height>
     </rect>
@@ -278,9 +278,9 @@ QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
   <widget class="MyLabel" name="turnsTillAction_Text">
    <property name="geometry">
     <rect>
-     <x>36</x>
-     <y>243</y>
-     <width>181</width>
+     <x>4</x>
+     <y>353</y>
+     <width>120</width>
      <height>16</height>
     </rect>
    </property>
@@ -304,9 +304,9 @@ QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
   <widget class="MyLabel" name="animSpeed_Text">
    <property name="geometry">
     <rect>
-     <x>36</x>
-     <y>323</y>
-     <width>181</width>
+     <x>456</x>
+     <y>373</y>
+     <width>120</width>
      <height>16</height>
     </rect>
    </property>
@@ -317,8 +317,8 @@ QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
   <widget class="QLineEdit" name="animSpeed_cur">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>320</y>
+     <x>590</x>
+     <y>370</y>
      <width>40</width>
      <height>20</height>
     </rect>
@@ -336,9 +336,9 @@ QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
   <widget class="MyLabel" name="standAtLoc_Text">
    <property name="geometry">
     <rect>
-     <x>36</x>
-     <y>363</y>
-     <width>181</width>
+     <x>456</x>
+     <y>403</y>
+     <width>120</width>
      <height>16</height>
     </rect>
    </property>
@@ -349,8 +349,8 @@ QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
   <widget class="QLineEdit" name="standAtLoc_cur">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>360</y>
+     <x>590</x>
+     <y>400</y>
      <width>40</width>
      <height>20</height>
     </rect>
@@ -368,9 +368,9 @@ QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
   <widget class="MyLabel" name="runToLoc_Text">
    <property name="geometry">
     <rect>
-     <x>36</x>
-     <y>393</y>
-     <width>181</width>
+     <x>456</x>
+     <y>433</y>
+     <width>120</width>
      <height>16</height>
     </rect>
    </property>
@@ -381,8 +381,8 @@ QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
   <widget class="QLineEdit" name="runToLoc_cur">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>390</y>
+     <x>590</x>
+     <y>430</y>
      <width>40</width>
      <height>20</height>
     </rect>
@@ -408,6 +408,433 @@ QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
    </property>
    <property name="text">
     <string notr="true">u</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="sleep_Text">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>140</y>
+     <width>120</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="sleep_cur">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>137</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="silence_Text">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>170</y>
+     <width>120</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="silence_cur">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>167</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="shell_cur">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>197</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="shell_Text">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>200</y>
+     <width>120</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="protect_Text">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>230</y>
+     <width>120</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="protect_cur">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>227</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="reflect_cur">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>257</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="reflect_Text">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>260</y>
+     <width>120</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="fireIm_cur">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>167</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="iceIm_cur">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>227</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="regen_cur">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>257</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="waterIm_Text">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>140</y>
+     <width>120</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="lightIm_Text">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>200</y>
+     <width>120</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="regen_Text">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>260</y>
+     <width>120</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="fireIm_Text">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>170</y>
+     <width>120</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="iceIm_Text">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>230</y>
+     <width>120</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="waterIm_cur">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>137</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lightIm_cur">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>197</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="conditionList">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>137</y>
+     <width>211</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>MS Sans Serif</family>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QListWidget{background-color: rgba(255, 255, 255, 0);}
+QListWidget::item{background-color: rgba(233, 233, 233, 220);}
+QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="selectionBehavior">
+    <enum>QAbstractItemView::SelectRows</enum>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="deathCountdown_Text">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>383</y>
+     <width>120</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="deathCountdown_cur">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>380</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="conditionList_Text">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>115</y>
+     <width>120</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="rescanButton">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>4</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">r</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="lockButton">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>30</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">l</string>
    </property>
   </widget>
  </widget>

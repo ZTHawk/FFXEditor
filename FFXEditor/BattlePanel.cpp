@@ -40,42 +40,38 @@ BattlePanel::BattlePanel( QWidget *p )
 	ui.setupUi(this);
 	
 	locked = true;
-	bDataSize = 0;
 	battleThread = NULL;
 	lastIndex = 0;
 	
-	widgetList.push_back(ui.hp_Text);
-	widgetList.push_back(ui.hp_cur);
-	widgetList.push_back(ui.hp_max);
-	widgetList.push_back(ui.mp_Text);
-	widgetList.push_back(ui.mp_cur);
-	widgetList.push_back(ui.mp_max);
-	widgetList.push_back(ui.overdrive_Text);
-	widgetList.push_back(ui.overdrive_cur);
-	widgetList.push_back(ui.haste_Text);
-	widgetList.push_back(ui.haste_cur);
-	widgetList.push_back(ui.slow_Text);
-	widgetList.push_back(ui.slow_cur);
-	widgetList.push_back(ui.turnsTillAction_Text);
-	widgetList.push_back(ui.turnsTillAction_cur);
-	widgetList.push_back(ui.battleActivity);
-	widgetList.push_back(ui.animSpeed_Text);
-	widgetList.push_back(ui.animSpeed_cur);
-	widgetList.push_back(ui.standAtLoc_Text);
-	widgetList.push_back(ui.standAtLoc_cur);
-	widgetList.push_back(ui.runToLoc_Text);
-	widgetList.push_back(ui.runToLoc_cur);
-	
-	for ( int i = static_cast<int>(widgetList.size()) - 1; i >= 0; --i )
-		widgetList[i]->setVisible(false);
+	QObjectList list = children();
+	QWidget *w;
+	for ( int i = 0; i < list.size(); ++i )
+	{
+		w = dynamic_cast<QWidget*>(list.at(i));
+		w->setVisible(w == ui.unlockButton);
+	}
 	
 	ui.unlockButton->setText(QString::fromStdWString(guiList[GN_BP_UNLOCK]));
+	ui.lockButton->setText(QString::fromStdWString(guiList[GN_BP_LOCK]));
+	ui.rescanButton->setText(QString::fromStdWString(guiList[GN_BP_RESCAN]));
 	
 	ui.hp_Text->setText(QString::fromStdWString(guiList[GN_BP_HP]));
 	ui.mp_Text->setText(QString::fromStdWString(guiList[GN_BP_MP]));
 	ui.overdrive_Text->setText(QString::fromStdWString(guiList[GN_BP_OD]));
+	ui.deathCountdown_Text->setText(QString::fromStdWString(guiList[GN_BP_DEATH_CD]));
+	ui.sleep_Text->setText(QString::fromStdWString(guiList[GN_BP_SLEEP]));
+	ui.silence_Text->setText(QString::fromStdWString(guiList[GN_BP_SILENCE]));
+	ui.shell_Text->setText(QString::fromStdWString(guiList[GN_BP_SHELL]));
+	ui.protect_Text->setText(QString::fromStdWString(guiList[GN_BP_PROT]));
+	ui.reflect_Text->setText(QString::fromStdWString(guiList[GN_BP_REFLEC]));
+	ui.waterIm_Text->setText(QString::fromStdWString(guiList[GN_BP_WATER]));
+	ui.fireIm_Text->setText(QString::fromStdWString(guiList[GN_BP_FIRE]));
+	ui.lightIm_Text->setText(QString::fromStdWString(guiList[GN_BP_LIGHT]));
+	ui.iceIm_Text->setText(QString::fromStdWString(guiList[GN_BP_ICE]));
+	ui.regen_Text->setText(QString::fromStdWString(guiList[GN_BP_REGEN]));
 	ui.haste_Text->setText(QString::fromStdWString(guiList[GN_BP_HASTE]));
 	ui.slow_Text->setText(QString::fromStdWString(guiList[GN_BP_SLOW]));
+	ui.conditionList_Text->setText(QString::fromStdWString(guiList[GN_BP_COND]));
 	ui.turnsTillAction_Text->setText(QString::fromStdWString(guiList[GN_BP_TURNS]));
 	ui.battleActivity->setText(QString::fromStdWString(guiList[GN_BP_ACTIV]));
 	
@@ -83,8 +79,16 @@ BattlePanel::BattlePanel( QWidget *p )
 	ui.standAtLoc_Text->setText(QString::fromStdWString(guiList[GN_BP_STAND]));
 	ui.runToLoc_Text->setText(QString::fromStdWString(guiList[GN_BP_RUN]));
 	
+	for ( int i = 0; i < BATTLEDATA_BITMASK_SIZE; ++i )
+	{
+		ui.conditionList->addItem(QString::fromStdWString(guiList[GN_BP_COND + 1 + i]));
+		ui.conditionList->item(i)->setCheckState(Qt::Unchecked);
+	}
+	
 	connect(ui.actorList, SIGNAL(currentRowChanged(int)), this, SLOT(actorChanged(int)));
 	connect(ui.unlockButton, SIGNAL(clicked(bool)), this, SLOT(unlockButtonPressed()));
+	connect(ui.lockButton, SIGNAL(clicked(bool)), this, SLOT(lockButtonPressed()));
+	connect(ui.rescanButton, SIGNAL(clicked(bool)), this, SLOT(rescanButtonPressed()));
 }
 
 BattlePanel::~BattlePanel( )
@@ -99,7 +103,7 @@ BattlePanel::~BattlePanel( )
 
 bool BattlePanel::initData( )
 {
-	return true;//reloadData(0);
+	return true;
 }
 
 bool BattlePanel::reloadData( int depth )
@@ -109,15 +113,14 @@ bool BattlePanel::reloadData( int depth )
 	
 	if ( bData.size() == 0 )
 	{
-		findBattleData();
+		if ( findBattleData() == false )
+			return false;
 		
 		ui.actorList->clear();
-		if ( bDataSize > 0 )
+		if ( bData.size() > 0 )
 		{
-			for ( int i = 0; i < bDataSize; ++i )
-			{
+			for ( size_t i = 0; i < bData.size(); ++i )
 				ui.actorList->addItem(QString::fromStdWString(asciiFFX_ascii(bData[i]->data->nameBytes)));
-			}
 			ui.actorList->setCurrentRow(0);
 		}
 	}else
@@ -128,10 +131,8 @@ bool BattlePanel::reloadData( int depth )
 			bData[ui.actorList->currentRow()]->readData();
 		}else
 		{
-			for ( int i = 0; i < bDataSize; ++i )
-			{
+			for ( size_t i = 0; i < bData.size(); ++i )
 				bData[i]->readData();
-			}
 		}
 		setVariables(bData[curRow]->data);
 	}
@@ -147,10 +148,8 @@ bool BattlePanel::checkData( int depth )
 		result &= bData[lastIndex]->cheackData();
 	}else
 	{
-		for ( int i = 0; i < bDataSize; ++i )
-		{
+		for ( size_t i = 0; i < bData.size(); ++i )
 			result &= bData[i]->cheackData();
-		}
 	}
 	
 	return result;
@@ -165,41 +164,41 @@ bool BattlePanel::writeData( int depth )
 		result &= bData[lastIndex]->writeData();
 	}else
 	{
-		for ( int i = 0; i < bDataSize; ++i )
+		for ( size_t i = 0; i < bData.size(); ++i )
 			result &= bData[i]->writeData();
 	}
 	
 	return result;
 }
 
-void BattlePanel::unlock( )
+bool BattlePanel::unlock( )
 {
 	locked = false;
-	//bData.resize(8);
 	if ( reloadData() == false )
-		return;
+		return false;
 	
 	// todo fix crash when not in battle
 	battleThread = new BattleDataThread(bData[0]->getInitAdr());
 	connect(battleThread, SIGNAL(finished()), this, SLOT(battleOver()));
 	battleThread->start();
+	
+	return true;
 }
 
 void BattlePanel::lock( )
 {
 	locked = true;
-	for ( int i = 0; i < bDataSize; ++i )
+	for ( int i = static_cast<int>(bData.size()) - 1; i >= 0; --i )
 		delete bData[i];
-	bDataSize = 0;
 	bData.clear();
 	delete battleThread;
 	battleThread = NULL;
 }
 
-void BattlePanel::findBattleData( )
+bool BattlePanel::findBattleData( )
 {
 	unsigned int baseEnd = BASE_OFFSET + 30000000;
-	bDataSize = 0;
+	int bDataSize = 0;
 	int specialChar_lastChar;
 	unsigned char identChars[BD_INDENT_LEN];
 	unsigned int pos = 1,
@@ -208,8 +207,6 @@ void BattlePanel::findBattleData( )
 		offStart;
 	
 	offStart = BASE_OFFSET;
-	if ( bData.size() == 0 )
-		bData.resize(8, NULL);
 	while ( pos != 0 )
 	{
 		pos = findOffsetOfByteArray(const_cast<unsigned char*>(battleDataContainerA),
@@ -253,13 +250,13 @@ void BattlePanel::findBattleData( )
 		if ( pos2 == 0 )
 			continue;
 		
-		bData[bDataSize] = new BattleData(posBase, pos2);
+		bData.push_back(new BattleData(posBase, pos2));
 		bData[bDataSize]->readData();
 		++bDataSize;
 		offStart = posBase + BD_CONTAINER_SKIP_LEN;
 	}
-	if ( bDataSize == 0 )
-		bData.clear();
+	
+	return (bDataSize > 0);
 }
 
 bool BattlePanel::getVariables( PBATTLEDATA bData )
@@ -289,6 +286,17 @@ void BattlePanel::setVariables( PBATTLEDATA bData )
 	ui.mp_cur->setText(QString::number(bData->mp));
 	ui.mp_max->setText(QString::number(bData->mp_max));
 	ui.overdrive_cur->setText(QString::number(bData->overdrive));
+	ui.deathCountdown_cur->setText(QString::number(bData->deathCountDown));
+	ui.sleep_cur->setText(QString::number(bData->sleepCnt));
+	ui.silence_cur->setText(QString::number(bData->silenceCnt));
+	ui.shell_cur->setText(QString::number(bData->shellCnt));
+	ui.protect_cur->setText(QString::number(bData->protectCnt));
+	ui.reflect_cur->setText(QString::number(bData->reflectCnt));
+	ui.waterIm_cur->setText(QString::number(bData->waterImmunityCnt));
+	ui.fireIm_cur->setText(QString::number(bData->fireImmunityCnt));
+	ui.lightIm_cur->setText(QString::number(bData->lightningImmunityCnt));
+	ui.iceIm_cur->setText(QString::number(bData->iceImmunityCnt));
+	ui.regen_cur->setText(QString::number(bData->regenCnt));
 	ui.haste_cur->setText(QString::number(bData->hasteCnt));
 	ui.slow_cur->setText(QString::number(bData->slowCnt));
 	ui.turnsTillAction_cur->setText(QString::number(bData->turnsTillAction));
@@ -297,6 +305,19 @@ void BattlePanel::setVariables( PBATTLEDATA bData )
 	ui.animSpeed_cur->setText(QString::number(bData->animSpeed));
 	ui.standAtLoc_cur->setText(QString::number(bData->standAtLocation));
 	ui.runToLoc_cur->setText(QString::number(bData->runToLocation));
+	
+	unsigned int newState;
+	for ( int i = 0; i < BATTLEDATA_BITMASK_SIZE; ++i )
+	{
+		if ( i < BATTLEDATA_BITMASK1_SIZE )
+			newState = (bData->conditionMask
+				& (1<<i));
+		else
+			newState = (bData->conditionMask2
+				& (1<<(i - BATTLEDATA_BITMASK1_SIZE)));
+		ui.conditionList->item(i)->setCheckState(newState > 0
+			? Qt::Checked : Qt::Unchecked);
+	}
 }
 
 void BattlePanel::actorChanged( int index )
@@ -316,20 +337,43 @@ void BattlePanel::actorChanged( int index )
 
 void BattlePanel::unlockButtonPressed( )
 {
-	ui.unlockButton->setVisible(false);
-	for ( int i = static_cast<int>(widgetList.size()) - 1; i >= 0; --i )
+	if ( unlock() == false )
+		return;
+	
+	QObjectList list = children();
+	QWidget *w;
+	for ( int i = 0; i < list.size(); ++i )
 	{
-		widgetList[i]->setVisible(true);
+		w = dynamic_cast<QWidget*>(list.at(i));
+		w->setVisible(w != ui.unlockButton);
 	}
-	unlock();
 }
 
 void BattlePanel::battleOver( )
 {
 	lock();
-	ui.unlockButton->setVisible(true);
-	for ( int i = static_cast<int>(widgetList.size()) - 1; i >= 0; --i )
+	
+	QObjectList list = children();
+	QWidget *w;
+	for ( int i = 0; i < list.size(); ++i )
 	{
-		widgetList[i]->setVisible(false);
+		w = dynamic_cast<QWidget*>(list.at(i));
+		w->setVisible(w == ui.unlockButton);
 	}
+}
+
+void BattlePanel::lockButtonPressed( )
+{
+	battleThread->stop();
+	// battleOver will be called once thread ends
+}
+
+void BattlePanel::rescanButtonPressed( )
+{
+	disconnect(battleThread, SIGNAL(finished()), this, SLOT(battleOver()));
+	battleThread->stop();
+	battleThread->wait(1500);
+	lock();
+	if ( unlock() == false )
+		lock();
 }

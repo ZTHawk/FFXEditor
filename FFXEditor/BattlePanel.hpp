@@ -40,25 +40,25 @@ public:
 	virtual bool checkData( int depth = 0 );
 	virtual bool writeData( int depth = 0 );
 	
-	void unlock( );
+	bool unlock( );
 	void lock( );
 	
 private:
 	Ui::BattlePanel ui;
 	vector<BattleData*> bData;
-	vector<QWidget*> widgetList;
-	int bDataSize;
 	bool locked;
 	BattleDataThread *battleThread;
 	int lastIndex;
 	
-	void findBattleData( );
+	bool findBattleData( );
 	bool getVariables( PBATTLEDATA bData );
 	void setVariables( PBATTLEDATA bData );
 	
 protected slots:
 	void actorChanged( int index );
 	void unlockButtonPressed( );
+	void lockButtonPressed( );
+	void rescanButtonPressed( );
 	void battleOver( );
 };
 
