@@ -124,7 +124,7 @@ static const char *itemNames_en =
 	"Door to Tomorrow\\"	// Tor der Zukunft
 	"Wings of Discovery\\"	// Gigantenflügel
 	"Gamblers Spirit\\"		// Zockerseele
-	"Underdog\'s Secret\\"	// Wendeblatt
+	"Underdog's Secret\\"	// Wendeblatt
 	"Winning Formula\\"		// Siegesrausch
 	
 	"\\"
