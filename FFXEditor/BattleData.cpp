@@ -9,8 +9,6 @@ BattleData::BattleData( int addressInit , int address )
 	this->addressInit = addressInit;
 	data = new BATTLEDATA;
 	memset(data, 0, sizeof(BATTLEDATA));
-	data2 = new BATTLEDATA2;
-	memset(data, 0, sizeof(BATTLEDATA2));
 	
 	error = false;
 }
@@ -35,16 +33,30 @@ bool BattleData::readData( )
 	data->animSpeed = memMng->readByte(addressInit + BD_OFFSET_ANIM_SPEED, result);
 	data->standAtLocation = memMng->readByte(addressInit + BD_OFFSET_STAND_AT_LOCATION, result);
 	data->runToLocation = memMng->readByte(addressInit + BD_OFFSET_RUN_TO_LOCATION, result);
+	memMng->read(addressInit + BD_OFFSET_NAME, data->nameBytes, 200);
 	
-	data2->max_hp = memMng->readInt(address + BD_OFFSET_HP_MAX, result);
-	data2->max_mp = memMng->readInt(address + BD_OFFSET_MP_MAX, result);
-	data2->overdrive = memMng->readByte(address + BD_OFFSET_OVERDRIVE, result);
-	data2->hp = memMng->readInt(address + BD_OFFSET_HP, result);
-	data2->mp = memMng->readInt(address + BD_OFFSET_MP, result);
-	data2->hasteAmount = memMng->readByte(address + BD_OFFSET_HASTE_AMOUNT, result);
-	data2->slowAmount = memMng->readByte(address + BD_OFFSET_SLOW_AMOUNT, result);
-	data2->turnsTillAction = memMng->readByte(address + BD_OFFSET_TURN_TILL_ACTION, result);
-	data2->disableBattleActivity = memMng->readByte(address + BD_OFFSET_DISABLE_ACTIVITY, result);
+	data->hp_max = memMng->readInt(address + BD_OFFSET_HP_MAX, result);
+	data->mp_max = memMng->readInt(address + BD_OFFSET_MP_MAX, result);
+	data->overdrive = memMng->readByte(address + BD_OFFSET_OVERDRIVE, result);
+	data->deathCountDown = memMng->readShort(address + BD_OFFSET_DEATH_COUNTDOWN, result);
+	data->hp = memMng->readInt(address + BD_OFFSET_HP, result);
+	data->mp = memMng->readInt(address + BD_OFFSET_MP, result);
+	data->conditionMask = memMng->readByte(address + BD_OFFSET_CONDITIONS_BITMASK, result);
+	data->sleepCnt = memMng->readByte(address + BD_OFFSET_SLEEP_CNT, result);
+	data->silenceCnt = memMng->readByte(address + BD_OFFSET_SILENCE_CNT, result);
+	data->shellCnt = memMng->readByte(address + BD_OFFSET_SHELL_CNT, result);
+	data->protectCnt = memMng->readByte(address + BD_OFFSET_PROTECT_CNT, result);
+	data->reflectCnt = memMng->readByte(address + BD_OFFSET_REFLECT_CNT, result);
+	data->waterImmunityCnt = memMng->readByte(address + BD_OFFSET_WATER_IMMUNITY_CNT, result);
+	data->fireImmunityCnt = memMng->readByte(address + BD_OFFSET_FIRE_IMMUNITY_CNT, result);
+	data->lightningImmunityCnt = memMng->readByte(address + BD_OFFSET_LIGHTNING_IMMUNITY_CNT, result);
+	data->iceImmunityCnt = memMng->readByte(address + BD_OFFSET_ICE_IMMUNITY_CNT, result);
+	data->regenCnt = memMng->readByte(address + BD_OFFSET_REGEN_CNT, result);
+	data->hasteCnt = memMng->readByte(address + BD_OFFSET_HASTE_CNT, result);
+	data->slowCnt = memMng->readByte(address + BD_OFFSET_SLOW_CNT, result);
+	data->conditionMask2 = memMng->readShort(address + BD_OFFSET_CONDITION2_BITMASK, result);
+	data->turnsTillAction = memMng->readByte(address + BD_OFFSET_TURN_TILL_ACTION, result);
+	data->battleActivity = memMng->readByte(address + BD_OFFSET_BATTLE_ACTIVITY, result);
 	
 	return result;
 }
@@ -56,15 +68,33 @@ bool BattleData::writeData( )
 	result &= memMng->writeByte(addressInit + BD_OFFSET_STAND_AT_LOCATION, data->standAtLocation);
 	result &= memMng->writeByte(addressInit + BD_OFFSET_RUN_TO_LOCATION, data->runToLocation);
 	
-	result &= memMng->writeInt(address + BD_OFFSET_HP_MAX, data2->max_hp);
-	result &= memMng->writeInt(address + BD_OFFSET_MP_MAX, data2->max_mp);
-	result &= memMng->writeByte(address + BD_OFFSET_OVERDRIVE, data2->overdrive);
-	result &= memMng->writeInt(address + BD_OFFSET_HP, data2->hp);
-	result &= memMng->writeInt(address + BD_OFFSET_MP, data2->mp);
-	result &= memMng->writeByte(address + BD_OFFSET_HASTE_AMOUNT, data2->hasteAmount);
-	result &= memMng->writeByte(address + BD_OFFSET_SLOW_AMOUNT, data2->slowAmount);
-	result &= memMng->writeByte(address + BD_OFFSET_TURN_TILL_ACTION, data2->turnsTillAction);
-	result &= memMng->writeByte(address + BD_OFFSET_DISABLE_ACTIVITY, data2->disableBattleActivity);
+	result &= memMng->writeInt(address + BD_OFFSET_HP_MAX, data->hp_max);
+	result &= memMng->writeInt(address + BD_OFFSET_MP_MAX, data->mp_max);
+	result &= memMng->writeByte(address + BD_OFFSET_OVERDRIVE, data->overdrive);
+	result &= memMng->writeByte(address + BD_OFFSET_DEATH_COUNTDOWN, data->deathCountDown);
+	result &= memMng->writeInt(address + BD_OFFSET_HP, data->hp);
+	result &= memMng->writeInt(address + BD_OFFSET_MP, data->mp);
+	result &= memMng->writeShort(address + BD_OFFSET_CONDITIONS_BITMASK, data->conditionMask);
+	result &= memMng->writeByte(address + BD_OFFSET_SLEEP_CNT, data->sleepCnt);
+	result &= memMng->writeByte(address + BD_OFFSET_SILENCE_CNT, data->silenceCnt);
+	result &= memMng->writeByte(address + BD_OFFSET_SHELL_CNT, data->shellCnt);
+	result &= memMng->writeByte(address + BD_OFFSET_PROTECT_CNT, data->protectCnt);
+	result &= memMng->writeByte(address + BD_OFFSET_REFLECT_CNT, data->reflectCnt);
+	result &= memMng->writeByte(address + BD_OFFSET_WATER_IMMUNITY_CNT, data->waterImmunityCnt);
+	result &= memMng->writeByte(address + BD_OFFSET_FIRE_IMMUNITY_CNT, data->fireImmunityCnt);
+	result &= memMng->writeByte(address + BD_OFFSET_LIGHTNING_IMMUNITY_CNT, data->lightningImmunityCnt);
+	result &= memMng->writeByte(address + BD_OFFSET_ICE_IMMUNITY_CNT, data->iceImmunityCnt);
+	result &= memMng->writeByte(address + BD_OFFSET_REGEN_CNT, data->regenCnt);
+	result &= memMng->writeByte(address + BD_OFFSET_HASTE_CNT, data->hasteCnt);
+	result &= memMng->writeByte(address + BD_OFFSET_SLOW_CNT, data->slowCnt);
+	result &= memMng->writeShort(address + BD_OFFSET_CONDITION2_BITMASK, data->conditionMask2);
+	result &= memMng->writeByte(address + BD_OFFSET_TURN_TILL_ACTION, data->turnsTillAction);
+	result &= memMng->writeByte(address + BD_OFFSET_BATTLE_ACTIVITY, data->battleActivity);
 	
 	return result;
+}
+
+int BattleData::getInitAdr( )
+{
+	return addressInit;
 }

@@ -1,33 +1,41 @@
 #ifndef BATTLE_DATA_HPP
 #define BATTLE_DATA_HPP
 
-#pragma pack(push, before_struct)
-#pragma pack(1)
 typedef struct _BATTLEDATA
 {
 	unsigned char animSpeed;
 	unsigned char standAtLocation;
 	unsigned char runToLocation;
-}BATTLEDATA, *PBATTLEDATA;
-typedef struct _BATTLEDATA2
-{
-	unsigned int max_hp;
-	unsigned int max_mp;
+	char nameBytes[200];
+	
+	unsigned int hp_max;
+	unsigned int mp_max;
 	unsigned char overdrive;
+	unsigned char deathCountDown;
 	unsigned int hp;
 	unsigned int mp;
-	unsigned char hasteAmount;
-	unsigned char slowAmount;
+	unsigned short conditionMask;
+	unsigned char sleepCnt;
+	unsigned char silenceCnt;
+	unsigned char shellCnt;
+	unsigned char protectCnt;
+	unsigned char reflectCnt;
+	unsigned char waterImmunityCnt;
+	unsigned char fireImmunityCnt;
+	unsigned char lightningImmunityCnt;
+	unsigned char iceImmunityCnt;
+	unsigned char regenCnt;
+	unsigned char hasteCnt;
+	unsigned char slowCnt;
+	unsigned short conditionMask2;
 	unsigned char turnsTillAction;
-	unsigned char disableBattleActivity;
-}BATTLEDATA2, *PBATTLEDATA2;
-#pragma pack(pop, before_struct)
+	unsigned char battleActivity;
+}BATTLEDATA, *PBATTLEDATA;
 
 class BattleData
 {
 public:
 	PBATTLEDATA data;
-	PBATTLEDATA2 data2;
 	bool error;
 	
 	BattleData( int addressInit , int address );
@@ -36,6 +44,7 @@ public:
 	bool cheackData( );
 	bool readData( );
 	bool writeData( );
+	int getInitAdr( );
 	
 private:
 	int address;
