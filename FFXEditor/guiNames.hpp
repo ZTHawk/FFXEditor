@@ -116,7 +116,17 @@ enum GUI_NAMES
 	GN_MP,
 		GN_MP_GIL,
 	GN_BP,
-		GN_BP_,
+		GN_BP_UNLOCK,
+		GN_BP_HP,
+		GN_BP_MP,
+		GN_BP_OD,
+		GN_BP_HASTE,
+		GN_BP_SLOW,
+		GN_BP_TURNS,
+		GN_BP_ACTIV,
+		GN_BP_ANIMSPD,
+		GN_BP_STAND,
+		GN_BP_RUN,
 };
 
 extern vector<wstring> guiList;
@@ -228,7 +238,17 @@ static const char *guiList_en =
 	"Misc\\"
 		"Gil\\"
 	"Battle\\"
-		"\\"
+		"Unlock\\"
+		"HP (cur / max)\\"
+		"MP (cur / max)\\"
+		"Overdrive\\"
+		"Haste\\"
+		"Slow\\"
+		"Turns till action\\"
+		"Active in battle\\"
+		"Animation speed\\"
+		"Stand at location\\"
+		"Run to location\\"
 	"\0";
 
 /*

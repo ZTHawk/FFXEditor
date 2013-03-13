@@ -22,7 +22,402 @@ QLineEdit{
 	background-color: rgba(233, 233, 233, 220);
 }</string>
   </property>
+  <widget class="QListWidget" name="actorList">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>4</y>
+     <width>151</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>MS Sans Serif</family>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QListWidget{background-color: rgba(255, 255, 255, 0);}
+QListWidget::item{background-color: rgba(233, 233, 233, 220);}
+QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="selectionBehavior">
+    <enum>QAbstractItemView::SelectRows</enum>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="hp_max">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>27</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="hp_cur">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>27</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="hp_Text">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>30</y>
+     <width>121</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="mp_Text">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>60</y>
+     <width>121</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="mp_max">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>57</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="mp_cur">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>57</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="overdrive_cur">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>87</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="overdrive_Text">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>90</y>
+     <width>151</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="haste_cur">
+   <property name="geometry">
+    <rect>
+     <x>344</x>
+     <y>167</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="haste_Text">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>170</y>
+     <width>181</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="slow_Text">
+   <property name="geometry">
+    <rect>
+     <x>176</x>
+     <y>203</y>
+     <width>181</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="slow_cur">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>200</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="turnsTillAction_cur">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>240</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="turnsTillAction_Text">
+   <property name="geometry">
+    <rect>
+     <x>36</x>
+     <y>243</y>
+     <width>181</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="battleActivity">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>4</y>
+     <width>211</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">CheckBox</string>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="animSpeed_Text">
+   <property name="geometry">
+    <rect>
+     <x>36</x>
+     <y>323</y>
+     <width>181</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="animSpeed_cur">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>320</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="standAtLoc_Text">
+   <property name="geometry">
+    <rect>
+     <x>36</x>
+     <y>363</y>
+     <width>181</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="standAtLoc_cur">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>360</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="runToLoc_Text">
+   <property name="geometry">
+    <rect>
+     <x>36</x>
+     <y>393</y>
+     <width>181</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="runToLoc_cur">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>390</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="unlockButton">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>170</y>
+     <width>100</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">u</string>
+   </property>
+  </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyLabel</class>
+   <extends>QLabel</extends>
+   <header>MyLabel.hpp</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
