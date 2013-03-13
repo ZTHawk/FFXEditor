@@ -1,4 +1,5 @@
 #include "BattleData.hpp"
+#include "constants.hpp"
 #include "globals.hpp"
 #include "MemMng.hpp"
 #include "offsets.hpp"
@@ -56,7 +57,11 @@ bool BattleData::readData( )
 	data->slowCnt = memMng->readByte(address + BD_OFFSET_SLOW_CNT, result);
 	data->conditionMask2 = memMng->readShort(address + BD_OFFSET_CONDITION2_BITMASK, result);
 	data->turnsTillAction = memMng->readByte(address + BD_OFFSET_TURN_TILL_ACTION, result);
-	data->battleActivity = memMng->readByte(address + BD_OFFSET_BATTLE_ACTIVITY, result);
+	
+	int tmpAddress = address;
+	if ( langVersion == LANG_US )
+		tmpAddress += BD_OFFSET_SPECIAL;
+	data->battleActivity = memMng->readByte(tmpAddress + BD_OFFSET_BATTLE_ACTIVITY, result);
 	
 	return result;
 }
@@ -89,7 +94,11 @@ bool BattleData::writeData( )
 	result &= memMng->writeByte(address + BD_OFFSET_SLOW_CNT, data->slowCnt);
 	result &= memMng->writeShort(address + BD_OFFSET_CONDITION2_BITMASK, data->conditionMask2);
 	result &= memMng->writeByte(address + BD_OFFSET_TURN_TILL_ACTION, data->turnsTillAction);
-	result &= memMng->writeByte(address + BD_OFFSET_BATTLE_ACTIVITY, data->battleActivity);
+	
+	int tmpAddress = address;
+	if ( langVersion == LANG_US )
+		tmpAddress += BD_OFFSET_SPECIAL;
+	result &= memMng->writeByte(tmpAddress + BD_OFFSET_BATTLE_ACTIVITY, data->battleActivity);
 	
 	return result;
 }
