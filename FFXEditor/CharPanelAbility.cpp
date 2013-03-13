@@ -26,7 +26,7 @@ CharPanelAbility::CharPanelAbility( QWidget *p )
 		abilityList[slot]->item(i % 32)->setCheckState(Qt::Unchecked);
 	}
 	
-	ui.abilitys_Text->setText(QString::fromStdWString(guiList[GN_CP_A_INFO]) + QString(":"));
+	ui.abilitys_Text->setText(QString::fromStdWString(guiList[GN_CP_A_INFO]));
 	
 	connect(ui.abilitys_Text, SIGNAL(clicked()), this, SLOT(text_Click()));
 }

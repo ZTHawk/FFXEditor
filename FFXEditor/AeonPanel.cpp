@@ -12,22 +12,22 @@ AeonPanel::AeonPanel( QWidget *p )
 	lastButtonClicked = NULL;
 	lastButtonID = 0;
 	
-	ui.attack_Text->setText(QString::fromStdWString(guiList[GN_AP_ATT]) + QString(":"));
-	ui.defense_Text->setText(QString::fromStdWString(guiList[GN_AP_DEF]) + QString(":"));
-	ui.magic_Text->setText(QString::fromStdWString(guiList[GN_AP_MAG]) + QString(":"));
-	ui.magicDef_Text->setText(QString::fromStdWString(guiList[GN_AP_MDEF]) + QString(":"));
-	ui.speed_Text->setText(QString::fromStdWString(guiList[GN_AP_SPD]) + QString(":"));
-	ui.luck_Text->setText(QString::fromStdWString(guiList[GN_AP_LUCK]) + QString(":"));
-	ui.evade_Text->setText(QString::fromStdWString(guiList[GN_AP_EVA]) + QString(":"));
-	ui.hit_Text->setText(QString::fromStdWString(guiList[GN_AP_HIT]) + QString(":"));
-	ui.available->setText(QString::fromStdWString(guiList[GN_AP_AVAIL]) + QString(":"));
-	ui.hp_Text->setText(QString::fromStdWString(guiList[GN_AP_HP]) + QString(":"));
-	ui.mp_Text->setText(QString::fromStdWString(guiList[GN_AP_MP]) + QString(":"));
-	ui.enemys_Text->setText(QString::fromStdWString(guiList[GN_AP_KILL]) + QString(":"));
-	ui.deaths_Text->setText(QString::fromStdWString(guiList[GN_AP_DEATH]) + QString(":"));
-	ui.overdrive_Text->setText(QString::fromStdWString(guiList[GN_AP_OD]) + QString(":"));
-	ui.battles_revive_Text->setText(QString::fromStdWString(guiList[GN_AP_BTL]) + QString(":"));
-	ui.ability_Text->setText(QString::fromStdWString(guiList[GN_AP_ABIL]) + QString(":"));
+	ui.attack_Text->setText(QString::fromStdWString(guiList[GN_AP_ATT]));
+	ui.defense_Text->setText(QString::fromStdWString(guiList[GN_AP_DEF]));
+	ui.magic_Text->setText(QString::fromStdWString(guiList[GN_AP_MAG]));
+	ui.magicDef_Text->setText(QString::fromStdWString(guiList[GN_AP_MDEF]));
+	ui.speed_Text->setText(QString::fromStdWString(guiList[GN_AP_SPD]));
+	ui.luck_Text->setText(QString::fromStdWString(guiList[GN_AP_LUCK]));
+	ui.evade_Text->setText(QString::fromStdWString(guiList[GN_AP_EVA]));
+	ui.hit_Text->setText(QString::fromStdWString(guiList[GN_AP_HIT]));
+	ui.available->setText(QString::fromStdWString(guiList[GN_AP_AVAIL]));
+	ui.hp_Text->setText(QString::fromStdWString(guiList[GN_AP_HP]));
+	ui.mp_Text->setText(QString::fromStdWString(guiList[GN_AP_MP]));
+	ui.enemys_Text->setText(QString::fromStdWString(guiList[GN_AP_KILL]));
+	ui.deaths_Text->setText(QString::fromStdWString(guiList[GN_AP_DEATH]));
+	ui.overdrive_Text->setText(QString::fromStdWString(guiList[GN_AP_OD]));
+	ui.battles_revive_Text->setText(QString::fromStdWString(guiList[GN_AP_BTL]));
+	ui.ability_Text->setText(QString::fromStdWString(guiList[GN_AP_ABIL]));
 	
 	ui.attack_Text->setInfoID(INFO_AEON_ATTACK);
 	ui.defense_Text->setInfoID(INFO_AEON_DEFENSE);

@@ -83,20 +83,20 @@ WeaponPanel::WeaponPanel( QWidget *p )
 		for ( j = 0; j < WEAPON_ABILITY_NAMES_SIZE; ++j )
 			abilityList[i]->addItem(QString::fromStdWString(weaponAbilityNames[j]));
 	
-	ui.available->setText(QString::fromStdWString(guiList[GN_WP_AVAIL]) + QString(":"));
-	ui.weaponType_Text->setText(QString::fromStdWString(guiList[GN_WP_TYPE]) + QString(":"));
-	ui.weaponName_Text->setText(QString::fromStdWString(guiList[GN_WP_NAME]) + QString(":"));
-	ui.armorWeapon->setText(QString::fromStdWString(guiList[GN_WP_ISARM]) + QString(":"));
-	ui.equippedChar_Text->setText(QString::fromStdWString(guiList[GN_WP_EQUIP]) + QString(":"));
-	ui.damageType_Text->setText(QString::fromStdWString(guiList[GN_WP_DMG]) + QString(":"));
-	ui.attack_Text->setText(QString::fromStdWString(guiList[GN_WP_ATT]) + QString(":"));
-	ui.critHit_Text->setText(QString::fromStdWString(guiList[GN_WP_CRIT]) + QString(":"));
-	ui.weaponModel_Text->setText(QString::fromStdWString(guiList[GN_WP_MODEL]) + QString(":"));
-	ui.slotCnt_Text->setText(QString::fromStdWString(guiList[GN_WP_SLOT]) + QString(":"));
-	ui.ability1_Text->setText(QString::fromStdWString(guiList[GN_WP_AB1]) + QString(":"));
-	ui.ability2_Text->setText(QString::fromStdWString(guiList[GN_WP_AB2]) + QString(":"));
-	ui.ability3_Text->setText(QString::fromStdWString(guiList[GN_WP_AB3]) + QString(":"));
-	ui.ability4_Text->setText(QString::fromStdWString(guiList[GN_WP_AB4]) + QString(":"));
+	ui.available->setText(QString::fromStdWString(guiList[GN_WP_AVAIL]));
+	ui.weaponType_Text->setText(QString::fromStdWString(guiList[GN_WP_TYPE]));
+	ui.weaponName_Text->setText(QString::fromStdWString(guiList[GN_WP_NAME]));
+	ui.armorWeapon->setText(QString::fromStdWString(guiList[GN_WP_ISARM]));
+	ui.equippedChar_Text->setText(QString::fromStdWString(guiList[GN_WP_EQUIP]));
+	ui.damageType_Text->setText(QString::fromStdWString(guiList[GN_WP_DMG]));
+	ui.attack_Text->setText(QString::fromStdWString(guiList[GN_WP_ATT]));
+	ui.critHit_Text->setText(QString::fromStdWString(guiList[GN_WP_CRIT]));
+	ui.weaponModel_Text->setText(QString::fromStdWString(guiList[GN_WP_MODEL]));
+	ui.slotCnt_Text->setText(QString::fromStdWString(guiList[GN_WP_SLOT]));
+	ui.ability1_Text->setText(QString::fromStdWString(guiList[GN_WP_AB1]));
+	ui.ability2_Text->setText(QString::fromStdWString(guiList[GN_WP_AB2]));
+	ui.ability3_Text->setText(QString::fromStdWString(guiList[GN_WP_AB3]));
+	ui.ability4_Text->setText(QString::fromStdWString(guiList[GN_WP_AB4]));
 	
 	ui.weaponModel_Text->setInfoID(INFO_WEAP_MODELS);
 	

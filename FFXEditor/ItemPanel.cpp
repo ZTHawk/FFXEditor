@@ -35,8 +35,8 @@ ItemPanel::ItemPanel( QWidget *p )
 	ui.items_table->setStyleSheet("QTableWidget{background-color: rgba(255, 255, 255, 0);"
 		"padding: 2 2 2 2;}");
 	
-	ui.items_Text->setText(QString::fromStdWString(guiList[GN_IP_ITEM]) + QString(":"));
-	ui.keyItems_Text->setText(QString::fromStdWString(guiList[GN_IP_KEYS]) + QString(":"));
+	ui.items_Text->setText(QString::fromStdWString(guiList[GN_IP_ITEM]));
+	ui.keyItems_Text->setText(QString::fromStdWString(guiList[GN_IP_KEYS]));
 	
 	connect(ui.items_Text, SIGNAL(clicked()), this, SLOT(text_Click()));
 	connect(ui.keyItems_Text, SIGNAL(clicked()), this, SLOT(text_Click()));

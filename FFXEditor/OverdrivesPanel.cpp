@@ -11,12 +11,12 @@ OverdrivesPanel::OverdrivesPanel( QWidget *p )
 	
 	overdriveData = new OverdriveData();
 	
-	ui.od_tidus_Text->setText(QString::fromStdWString(guiList[GN_TIDUS]) + QString(":"));
-	ui.od_auron_Text->setText(QString::fromStdWString(guiList[GN_AURON]) + QString(":"));
-	ui.od_wakka_Text->setText(QString::fromStdWString(guiList[GN_WAKKA]) + QString(":"));
-	ui.od_kimahri_Text->setText(QString::fromStdWString(guiList[GN_KIMAHRI]) + QString(":"));
-	ui.od_lulu_Text->setText(QString::fromStdWString(guiList[GN_LULU]) + QString(":"));
-	ui.od_rikku_Text->setText(QString::fromStdWString(guiList[GN_RIKKU]) + QString(":"));
+	ui.od_tidus_Text->setText(QString::fromStdWString(guiList[GN_TIDUS]));
+	ui.od_auron_Text->setText(QString::fromStdWString(guiList[GN_AURON]));
+	ui.od_wakka_Text->setText(QString::fromStdWString(guiList[GN_WAKKA]));
+	ui.od_kimahri_Text->setText(QString::fromStdWString(guiList[GN_KIMAHRI]));
+	ui.od_lulu_Text->setText(QString::fromStdWString(guiList[GN_LULU]));
+	ui.od_rikku_Text->setText(QString::fromStdWString(guiList[GN_RIKKU]));
 	
 	int i = 0;
 	for ( i = 0; i < OD_TIDUS_NAMES_SIZE; ++i )

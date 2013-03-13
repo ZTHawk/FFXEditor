@@ -12,7 +12,7 @@ GlobalPanel::GlobalPanel( QWidget *p )
 	
 	gilNum = 0;
 	
-	ui.gil_Text->setText(QString::fromStdWString(guiList[GN_MP_GIL]) + QString(":"));
+	ui.gil_Text->setText(QString::fromStdWString(guiList[GN_MP_GIL]));
 }
 
 GlobalPanel::~GlobalPanel( )

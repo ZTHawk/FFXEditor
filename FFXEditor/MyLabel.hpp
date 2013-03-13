@@ -23,9 +23,12 @@ public:
 		return infoID;
 	}
 	
-	void setText( const QString &str )
+	void setText( const QString &str , bool autoColon = true )
 	{
-		QLabel::setText(str);
+		if ( autoColon == true )
+			QLabel::setText(str + QString(":"));
+		else
+			QLabel::setText(str);
 		adjustSize();
 	}
 	
