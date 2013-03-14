@@ -837,6 +837,87 @@ QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
     <string notr="true">l</string>
    </property>
   </widget>
+  <widget class="QPlainTextEdit" name="mainInfo">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>200</y>
+     <width>400</width>
+     <height>140</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="documentTitle">
+    <string notr="true"/>
+   </property>
+   <property name="undoRedoEnabled">
+    <bool>false</bool>
+   </property>
+   <property name="plainText">
+    <string notr="true"/>
+   </property>
+   <property name="textInteractionFlags">
+    <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+   </property>
+  </widget>
+  <zorder>mainInfo</zorder>
+  <zorder>actorList</zorder>
+  <zorder>hp_max</zorder>
+  <zorder>hp_cur</zorder>
+  <zorder>hp_Text</zorder>
+  <zorder>mp_Text</zorder>
+  <zorder>mp_max</zorder>
+  <zorder>mp_cur</zorder>
+  <zorder>overdrive_cur</zorder>
+  <zorder>overdrive_Text</zorder>
+  <zorder>haste_cur</zorder>
+  <zorder>haste_Text</zorder>
+  <zorder>slow_Text</zorder>
+  <zorder>slow_cur</zorder>
+  <zorder>turnsTillAction_cur</zorder>
+  <zorder>turnsTillAction_Text</zorder>
+  <zorder>battleActivity</zorder>
+  <zorder>animSpeed_Text</zorder>
+  <zorder>animSpeed_cur</zorder>
+  <zorder>standAtLoc_Text</zorder>
+  <zorder>standAtLoc_cur</zorder>
+  <zorder>runToLoc_Text</zorder>
+  <zorder>runToLoc_cur</zorder>
+  <zorder>unlockButton</zorder>
+  <zorder>sleep_Text</zorder>
+  <zorder>sleep_cur</zorder>
+  <zorder>silence_Text</zorder>
+  <zorder>silence_cur</zorder>
+  <zorder>shell_cur</zorder>
+  <zorder>shell_Text</zorder>
+  <zorder>protect_Text</zorder>
+  <zorder>protect_cur</zorder>
+  <zorder>reflect_cur</zorder>
+  <zorder>reflect_Text</zorder>
+  <zorder>fireIm_cur</zorder>
+  <zorder>iceIm_cur</zorder>
+  <zorder>regen_cur</zorder>
+  <zorder>waterIm_Text</zorder>
+  <zorder>lightIm_Text</zorder>
+  <zorder>regen_Text</zorder>
+  <zorder>fireIm_Text</zorder>
+  <zorder>iceIm_Text</zorder>
+  <zorder>waterIm_cur</zorder>
+  <zorder>lightIm_cur</zorder>
+  <zorder>conditionList</zorder>
+  <zorder>deathCountdown_Text</zorder>
+  <zorder>deathCountdown_cur</zorder>
+  <zorder>conditionList_Text</zorder>
+  <zorder>rescanButton</zorder>
+  <zorder>lockButton</zorder>
  </widget>
  <customwidgets>
   <customwidget>

@@ -1,5 +1,6 @@
 #include "constants.hpp"
 #include "guiNames.hpp"
+#include "info.hpp"
 #include "BattlePanel.hpp"
 #include "BattleData.hpp"
 #include "MemMng.hpp"
@@ -24,7 +25,7 @@ void BattleDataThread::run( )
 	while ( running == true
 		&& pos > 0 )
 	{
-		this->msleep(1000);
+		this->msleep(500);
 		// -1 and +1 because findOffsetOfByteArray return 0 if nothing has been found
 		// so make sure it returns 1 in case it has found the specific data
 		pos = findOffsetOfByteArray(const_cast<unsigned char*>(battleDataContainerA),
@@ -43,14 +44,7 @@ BattlePanel::BattlePanel( QWidget *p )
 	battleThread = NULL;
 	lastIndex = 0;
 	
-	QObjectList list = children();
-	QWidget *w;
-	for ( int i = 0; i < list.size(); ++i )
-	{
-		w = dynamic_cast<QWidget*>(list.at(i));
-		w->setVisible(w == ui.unlockButton);
-	}
-	
+	ui.mainInfo->setPlainText(QString::fromStdWString(infoList[INFO_BATTLE]));
 	ui.unlockButton->setText(QString::fromStdWString(guiList[GN_BP_UNLOCK]));
 	ui.lockButton->setText(QString::fromStdWString(guiList[GN_BP_LOCK]));
 	ui.rescanButton->setText(QString::fromStdWString(guiList[GN_BP_RESCAN]));
@@ -85,6 +79,40 @@ BattlePanel::BattlePanel( QWidget *p )
 		ui.conditionList->item(i)->setCheckState(Qt::Unchecked);
 	}
 	
+	ui.hp_Text->setInfoID(INFO_BATTLE_HP);
+	ui.mp_Text->setInfoID(INFO_BATTLE_MP);
+	ui.overdrive_Text->setInfoID(INFO_BATTLE_OD);
+	ui.deathCountdown_Text->setInfoID(INFO_BATTLE_DEATH_CD);
+	ui.sleep_Text->setInfoID(INFO_BATTLE_STATUS);
+	ui.silence_Text->setInfoID(INFO_BATTLE_STATUS);
+	ui.shell_Text->setInfoID(INFO_BATTLE_STATUS);
+	ui.protect_Text->setInfoID(INFO_BATTLE_STATUS);
+	ui.reflect_Text->setInfoID(INFO_BATTLE_STATUS);
+	ui.waterIm_Text->setInfoID(INFO_BATTLE_STATUS);
+	ui.fireIm_Text->setInfoID(INFO_BATTLE_STATUS);
+	ui.lightIm_Text->setInfoID(INFO_BATTLE_STATUS);
+	ui.iceIm_Text->setInfoID(INFO_BATTLE_STATUS);
+	ui.regen_Text->setInfoID(INFO_BATTLE_STATUS);
+	ui.haste_Text->setInfoID(INFO_BATTLE_STATUS);
+	ui.slow_Text->setInfoID(INFO_BATTLE_STATUS);
+	ui.conditionList_Text->setInfoID(INFO_BATTLE_COND);
+	ui.turnsTillAction_Text->setInfoID(INFO_BATTLE_TURN_ACTION);
+	ui.animSpeed_Text->setInfoID(INFO_BATTLE_ANIM);
+	ui.standAtLoc_Text->setInfoID(INFO_BATTLE_STAND_AT);
+	ui.runToLoc_Text->setInfoID(INFO_BATTLE_RUN_TO);
+	
+	QObjectList list = children();
+	QWidget *w;
+	for ( int i = 0; i < list.size(); ++i )
+	{
+		w = dynamic_cast<QWidget*>(list.at(i));
+		w->setVisible(w == ui.unlockButton);
+		if ( w->inherits("MyLabel") == true
+			&& dynamic_cast<MyLabel*>(w)->getInfoID() != -1 )
+			connect(w, SIGNAL(clicked()), this, SLOT(text_Click()));
+	}
+	ui.mainInfo->setVisible(true);
+	
 	connect(ui.actorList, SIGNAL(currentRowChanged(int)), this, SLOT(actorChanged(int)));
 	connect(ui.unlockButton, SIGNAL(clicked(bool)), this, SLOT(unlockButtonPressed()));
 	connect(ui.lockButton, SIGNAL(clicked(bool)), this, SLOT(lockButtonPressed()));
@@ -96,7 +124,7 @@ BattlePanel::~BattlePanel( )
 	if ( battleThread != NULL )
 	{
 		battleThread->stop();
-		battleThread->wait(1500);
+		battleThread->wait(800);
 		delete battleThread;
 	}
 }
@@ -372,6 +400,7 @@ void BattlePanel::unlockButtonPressed( )
 		w = dynamic_cast<QWidget*>(list.at(i));
 		w->setVisible(w != ui.unlockButton);
 	}
+	ui.mainInfo->setVisible(false);
 }
 
 void BattlePanel::battleOver( )
@@ -385,6 +414,7 @@ void BattlePanel::battleOver( )
 		w = dynamic_cast<QWidget*>(list.at(i));
 		w->setVisible(w == ui.unlockButton);
 	}
+	ui.mainInfo->setVisible(true);
 }
 
 void BattlePanel::lockButtonPressed( )
@@ -397,8 +427,14 @@ void BattlePanel::rescanButtonPressed( )
 {
 	disconnect(battleThread, SIGNAL(finished()), this, SLOT(battleOver()));
 	battleThread->stop();
-	battleThread->wait(1500);
+	battleThread->wait(800);
 	lock();
 	if ( unlock() == false )
 		lock();
+}
+
+void BattlePanel::text_Click( )
+{
+	MyLabel *label = dynamic_cast<MyLabel*>(sender());
+	SendNotificationID(label->getInfoID());
 }

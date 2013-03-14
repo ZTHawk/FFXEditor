@@ -60,6 +60,7 @@ protected slots:
 	void lockButtonPressed( );
 	void rescanButtonPressed( );
 	void battleOver( );
+	void text_Click( );
 };
 
 #endif // BATTLE_PANEL_HPP
