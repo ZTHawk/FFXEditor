@@ -51,7 +51,7 @@ bool CfgFileMng::loadStart( )
 		value = line.mid(pos + 1);
 		
 		key = key.trimmed();
-		value = value.trimmed();
+		value = value.trimmed().replace("\\n", "\n");
 		
 		Tuple tup(key.toStdWString(), value.toStdWString());
 		data.push_back(tup);
