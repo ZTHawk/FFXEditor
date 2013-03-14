@@ -328,6 +328,9 @@ void WeaponPanel::text_Click( )
 
 void WeaponPanel::slotSelection_SelectedIndexChanged( int index )
 {
+	if ( index == -1 )
+		return;
+	
 	if ( lastSelectedIndex == index )
 		return;
 	
@@ -345,6 +348,9 @@ void WeaponPanel::slotSelection_SelectedIndexChanged( int index )
 
 void WeaponPanel::weaponSlotCnt_SelectedIndexChanged( int index )
 {
+	if ( index == -1 )
+		return;
+	
 	for ( int i = 0; i < 4; ++i )
 		abilityList[i]->setEnabled(i < index);
 }
