@@ -12,7 +12,7 @@ using std::vector;
 #define FRAME_WIDTH  640
 #define FRAME_HEIGHT 560
 
-#define FFXEDITOR_VERSION "1.1.0"
+#define FFXEDITOR_VERSION "2.0.0"
 
 enum
 {
