@@ -216,6 +216,7 @@ bool BattlePanel::unlock( )
 void BattlePanel::lock( )
 {
 	locked = true;
+	lastIndex = 0;
 	for ( int i = static_cast<int>(bData.size()) - 1; i >= 0; --i )
 		delete bData[i];
 	bData.clear();
