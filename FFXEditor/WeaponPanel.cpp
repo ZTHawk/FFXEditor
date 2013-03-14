@@ -1,6 +1,7 @@
 #include "constants.hpp"
 #include "weapon_constants.hpp"
 #include "guiNames.hpp"
+#include "info.hpp"
 #include "WeaponPanel.hpp"
 #include "WeaponData.hpp"
 #include "nameIdData.hpp"

@@ -1,6 +1,7 @@
 #include "constants.hpp"
 #include "ability_constants.hpp"
 #include "guiNames.hpp"
+#include "info.hpp"
 #include "AeonPanel.hpp"
 #include "CharData.hpp"
 

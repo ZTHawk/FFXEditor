@@ -1,5 +1,6 @@
 #include "constants.hpp"
 #include "guiNames.hpp"
+#include "info.hpp"
 #include "CharPanelData.hpp"
 #include "CharData.hpp"
 

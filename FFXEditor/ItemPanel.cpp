@@ -1,5 +1,6 @@
 #include "constants.hpp"
 #include "guiNames.hpp"
+#include "info.hpp"
 #include "ItemPanel.hpp"
 #include "ItemData.hpp"
 #include "constants.hpp"
