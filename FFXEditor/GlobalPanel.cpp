@@ -32,8 +32,6 @@ bool GlobalPanel::reloadData( int depth )
 	gilNum = memMng->readInt(BASE_OFFSET + OFFSET_GIL, result);
 	if ( result == true )
 		ui.gil->setText(QString::number(gilNum));
-	else
-		SendNotification("Error while reading misc data.");
 	
 	return result;
 }

@@ -113,6 +113,8 @@ enum GUI_NAMES
 		GN_WP_NOONE,
 		GN_WP_EMPTY,
 		GN_WP_BAD,
+		GN_WP_CUSTOM,
+		GN_WP_UNKNOWN,
 	GN_MP,
 		GN_MP_GIL,
 	GN_BP,
@@ -277,6 +279,8 @@ static const char *guiList_en =
 		"No-one\\"
 		"------ EMPTY SLOT ------\\"
 		"Bad data !!!\\"
+		"Custom\\"
+		"Unknown\\"
 	"Misc\\"
 		"Gil\\"
 	"Battle\\"

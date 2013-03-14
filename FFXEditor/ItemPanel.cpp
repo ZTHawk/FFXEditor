@@ -69,13 +69,8 @@ bool ItemPanel::reloadData( int depth )
 {
 	ui.items_table->clear();
 	
-	bool result = true;
-	result &= itemData->readData();
-	if ( result == false )
-	{
-		SendNotification("Error while reading item data.");
+	if ( itemData->readData() == false )
 		return false;
-	}
 	
 	int counter = 0;
 	int maxCounter = 0;

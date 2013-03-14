@@ -123,10 +123,7 @@ bool AeonPanel::reloadData( int depth )
 	}
 	
 	if ( result == false )
-	{
-		SendNotification("Error while reading aeon data.");
 		return false;
-	}
 	
 	setVariables(aeonData[lastButtonID]);
 	
@@ -154,7 +151,7 @@ bool AeonPanel::checkData( int depth )
 		}
 	}
 	if ( result == false )
-		SendNotification(QString("Some variables in Aeons tab ") + QString::fromStdWString(guiList[AEON_START + badID]) + QString(" are incorrect and marked Red. Please fix them"));
+		SendNotification(QString::fromStdWString(infoList[INFO_ERR_CHK_AEON_DATA]) + QString(" ") + QString::fromStdWString(guiList[AEON_START + badID]));
 	
 	return result;
 }

@@ -96,7 +96,7 @@ void FFXEditor::init( )
 	
 	BASE_OFFSET_BASE = findOffsetOfByteArray(reinterpret_cast<unsigned char*>(const_cast<unsigned char*>(seachBytesArray)), SEARCH_BYTES_ARRAY_LEN);
 	if ( BASE_OFFSET_BASE == 0 )
-		SendNotification("Error finding FFX data.");
+		SendNotification(QString::fromStdWString(infoList[INFO_ERR_NO_FFX_DATA]));
 	else
 	{
 		unsigned char *specialBytes = new unsigned char[SEARCH_SPECIAL_BYTE_AMOUNT];
@@ -254,8 +254,8 @@ void FFXEditor::initModelNames( )
 {
 	CfgFileMng cfgFileMng(L"cfg/weaponModels.cfg");
 	cfgFileMng.loadStart();
-	addModelNameData(L"Custom", W_CUSTOM);
-	addModelNameData(L"Unknown", W_UNKNOWN);
+	addModelNameData(guiList[GN_WP_CUSTOM], W_CUSTOM);
+	addModelNameData(guiList[GN_WP_UNKNOWN], W_UNKNOWN);
 	std::vector<std::wstring> tmpVec;
 	parseCharArrayToStringVector(weaponModelNames_en, tmpVec);
 	int cnt = 0,

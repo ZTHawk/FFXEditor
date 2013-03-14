@@ -59,10 +59,7 @@ OverdrivesPanel::~OverdrivesPanel( )
 bool OverdrivesPanel::reloadData( int depth )
 {
 	if ( overdriveData->readData() == false )
-	{
-		SendNotification("Error while reading overdrive data.");
 		return false;
-	}
 	
 	int i = 0;
 	int slot = 0;
