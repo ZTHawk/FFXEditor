@@ -2,7 +2,7 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9,00"
-	Name="FFXEditor"
+	Name="FFX-Editor"
 	ProjectGUID="{BE090B8F-32A6-4201-9D76-644607E23FC5}"
 	RootNamespace="FFXEditor"
 	Keyword="Qt4VSv1.0"
@@ -2163,6 +2163,10 @@
 				</File>
 			</Filter>
 		</Filter>
+		<File
+			RelativePath=".\FFXEditor\resource"
+			>
+		</File>
 	</Files>
 	<Globals>
 		<Global
