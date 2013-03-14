@@ -193,15 +193,4 @@ static const char *infoList_en =
 		"\"Stand at location\" has to be 255 to make this work.\\"
 	"\0";
 
-/*_BATTLE,
-	INFO_BATTLE_HP,
-	INFO_BATTLE_MP,
-	INFO_BATTLE_OD,
-	INFO_BATTLE_STATUS,
-	INFO_BATTLE_COND,
-	INFO_BATTLE_TURN_ACTION,
-	INFO_BATTLE_DEATH_CD,
-	INFO_BATTLE_ANIM,
-	INFO_BATTLE_STAND_AT,
-	INFO_BATTLE_RUN_TO,*/
 #endif // INFO_HPP

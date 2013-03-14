@@ -316,7 +316,6 @@ bool BattlePanel::getVariables( PBATTLEDATA bData )
 	result &= checkEntry(ui.standAtLoc_cur, &bData->standAtLocation, DATA_ATTRIBUTE);
 	result &= checkEntry(ui.runToLoc_cur, &bData->runToLocation, DATA_ATTRIBUTE);
 	
-	bool newState;
 	bData->conditionMask = 0;
 	bData->conditionMask2 = 0;
 	for ( int i = 0; i < BATTLEDATA_BITMASK_SIZE; ++i )
