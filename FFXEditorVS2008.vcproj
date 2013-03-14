@@ -504,6 +504,10 @@
 					>
 				</File>
 				<File
+					RelativePath=".\FFXEditor\info.hpp"
+					>
+				</File>
+				<File
 					RelativePath=".\FFXEditor\item_constants.hpp"
 					>
 				</File>
