@@ -79,7 +79,8 @@ enum INFO
 extern vector<wstring> infoList;
 static const char *infoList_en =
 	"This box shows additional info. Just click a text to get more information about it.\n"
-		"Do not use this while in a battle. Wait untill the fight is over, then hit \"Reload\" and modify as you wish.\\"
+		"Do not use this while in a battle. Wait untill the fight is over, then hit \"Reload\" and modify as you wish.\n"
+		"\"Section\" and normal button are equal except for characters/aeons/enemys. In that case only the specific data is reloaded/saved with normal button.\\"
 	"MaxValue: 255\nThe \"Basic\" value is the initial character value.\n"
 		"\"Current\" shows your current attack including Sphere settings.\n"
 		"Modifying \"Current\" does not do anything. It is updated once you enter Status menu.\\"
