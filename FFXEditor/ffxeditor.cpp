@@ -78,7 +78,9 @@ FFXEditor::FFXEditor(QWidget *parent, Qt::WFlags flags)
 	connect(reloadAction2, SIGNAL(triggered(bool)), this, SLOT(reloadButtonAll_Click()));
 	connect(saveAction2, SIGNAL(triggered(bool)), this, SLOT(saveButtonAll_Click()));
 	connect(ui.menuBox, SIGNAL(currentIndexChanged(int)), this, SLOT(menuBox_SelectedIndexChanged(int)));
-
+	
+	ui.reloadButton->setShortcut(QKeySequence("Ctrl+R"));
+	ui.saveButton->setShortcut(QKeySequence::Save);
 }
 
 FFXEditor::~FFXEditor()
