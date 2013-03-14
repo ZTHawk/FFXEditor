@@ -39,10 +39,10 @@ bool BattleData::readData( )
 	data->hp_max = memMng->readInt(address + BD_OFFSET_HP_MAX, result);
 	data->mp_max = memMng->readInt(address + BD_OFFSET_MP_MAX, result);
 	data->overdrive = memMng->readByte(address + BD_OFFSET_OVERDRIVE, result);
-	data->deathCountDown = memMng->readShort(address + BD_OFFSET_DEATH_COUNTDOWN, result);
+	data->deathCountDown = memMng->readByte(address + BD_OFFSET_DEATH_COUNTDOWN, result);
 	data->hp = memMng->readInt(address + BD_OFFSET_HP, result);
 	data->mp = memMng->readInt(address + BD_OFFSET_MP, result);
-	data->conditionMask = memMng->readByte(address + BD_OFFSET_CONDITIONS_BITMASK, result);
+	data->conditionMask = memMng->readShort(address + BD_OFFSET_CONDITIONS_BITMASK, result);
 	data->sleepCnt = memMng->readByte(address + BD_OFFSET_SLEEP_CNT, result);
 	data->silenceCnt = memMng->readByte(address + BD_OFFSET_SILENCE_CNT, result);
 	data->shellCnt = memMng->readByte(address + BD_OFFSET_SHELL_CNT, result);
