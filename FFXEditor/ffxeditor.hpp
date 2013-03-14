@@ -28,6 +28,7 @@ private:
 	void initData( );
 	void initNames( );
 	void initGUINames( );
+	void initInfoNames( );
 	void initOverdriveNames( );
 	void initAbilityNames( );
 	void initItemNames( );

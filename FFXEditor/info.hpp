@@ -63,6 +63,17 @@ enum INFO
 	INFO_AEON_DEATHS,
 	INFO_AEON_BATTLES_REVIVE,
 	INFO_WEAP_MODELS,
+	INFO_BATTLE,
+	INFO_BATTLE_HP,
+	INFO_BATTLE_MP,
+	INFO_BATTLE_OD,
+	INFO_BATTLE_STATUS,
+	INFO_BATTLE_COND,
+	INFO_BATTLE_TURN_ACTION,
+	INFO_BATTLE_DEATH_CD,
+	INFO_BATTLE_ANIM,
+	INFO_BATTLE_STAND_AT,
+	INFO_BATTLE_RUN_TO,
 };
 
 extern vector<wstring> infoList;
@@ -148,6 +159,49 @@ static const char *infoList_en =
 	"Determines how many battles you need to fight before this aeon can be sumoned again.\\"
 	"Using \"Custom\" model index is dangerous. Save your game before editing.\n"
 		"Some models will crash when entering a battle and others do when doing an attack.\\"
+	
+	"Be carful when using this.\n"
+		"If using incorrectly your game may freeze, crash or become unplayable until you reset it.\n"
+		"It is possible that characters are displayed twice. Make sure you modifying the correct one.\n"
+		"Always reload data before changeing something.\n"
+		"Some changes take effect once an actor gets in turn.\\"
+	"Current and maximum HP.\\"
+	"Current and maximum MP.\\"
+	"Overdrive bar status.\n"
+		"You can update it after each use to give immediate access to overdrives again.\\"
+	"Specific the amount of turns this effect shall last.\n"
+		"Character + enemy turn are decreasing this value.\n"
+		"254 = Infinite turns. Effect can be removed with counterspells and items.\n"
+		"255 = Infinite turns. Cannot be removed.\\"
+	"Conditions have to be used carefully.\n"
+		"Some only last until the actor is in turn again.\n"
+		"Removing KO will not revive the actor and make resurrection impossible.\\"
+	"Position in action bar.\n"
+		"0 = Next turn is of this actor.\\"
+	"In case of having the death countdown.\n"
+		"This value defines value above the head.\n"
+		"Amount of turns before death. Only own turns are counting.\\"
+	"Animation speed: 0-14\n"
+		"0 = No animation.\n"
+		"14 = Very fast animation (including attacks).\n"
+		"15 and above may freeze/crash the game.\\"
+	"Teleport actor to specified position.\n"
+		"255 is the initial value.\n"
+		"You need to teleport to the original location (search: 1-15) and then set it to 255 to make \"Run to location\" to work.\\"
+	"Makes the actor run to this position on battle field.\n"
+		"Positions are predefined.\n"
+		"\"Stand at location\" has to be 255 to make this work.\\"
 	"\0";
 
+/*_BATTLE,
+	INFO_BATTLE_HP,
+	INFO_BATTLE_MP,
+	INFO_BATTLE_OD,
+	INFO_BATTLE_STATUS,
+	INFO_BATTLE_COND,
+	INFO_BATTLE_TURN_ACTION,
+	INFO_BATTLE_DEATH_CD,
+	INFO_BATTLE_ANIM,
+	INFO_BATTLE_STAND_AT,
+	INFO_BATTLE_RUN_TO,*/
 #endif // INFO_HPP

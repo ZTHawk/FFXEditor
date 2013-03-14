@@ -4,6 +4,7 @@
 #include "globals.hpp"
 #include "offsets.hpp"
 #include "guiNames.hpp"
+#include "info.hpp"
 #include "cfgFileMng.hpp"
 #include "MemMng.hpp"
 #include "processMng.hpp"
@@ -131,6 +132,7 @@ void FFXEditor::init( )
 void FFXEditor::initNames( )
 {
 	initGUINames();
+	initInfoNames();
 	initOverdriveNames();
 	initAbilityNames();
 	initItemNames();
@@ -150,6 +152,18 @@ void FFXEditor::initGUINames( )
 	guiList.resize(tmpVec.size());
 	for ( size_t i = 0; i < tmpVec.size(); ++i )
 		guiList[i] = cfgFileMng.getString(fromInt(static_cast<int>(i)), tmpVec[i]);
+	cfgFileMng.loadEnd();
+}
+
+void FFXEditor::initInfoNames( )
+{
+	CfgFileMng cfgFileMng(L"cfg/info.cfg");
+	cfgFileMng.loadStart();
+	std::vector<std::wstring> tmpVec;
+	parseCharArrayToStringVector(infoList_en, tmpVec);
+	infoList.resize(tmpVec.size());
+	for ( size_t i = 0; i < tmpVec.size(); ++i )
+		infoList[i] = cfgFileMng.getString(fromInt(static_cast<int>(i)), tmpVec[i]);
 	cfgFileMng.loadEnd();
 }
 
