@@ -28,7 +28,7 @@
   <property name="styleSheet">
    <string notr="true">QMainWindow
 {
-border-image: url(:/FFXEditor/Resources/Final_Fantasy_X_Logo.jpg);
+border-image: url(:/FFXEditor/Resources/Final_Fantasy_X_Logo.png);
 }</string>
   </property>
   <widget class="QWidget" name="centralWidget">

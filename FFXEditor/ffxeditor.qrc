@@ -1,5 +1,5 @@
 <RCC>
   <qresource prefix="FFXEditor">
-    <file>Resources/Final_Fantasy_X_Logo.jpg</file>
+    <file>Resources/Final_Fantasy_X_Logo.png</file>
   </qresource>
 </RCC>
