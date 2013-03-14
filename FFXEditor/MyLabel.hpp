@@ -11,7 +11,7 @@ public:
 	MyLabel( QWidget *p )
 		: QLabel(p)
 	{
-		
+		infoID = -1;
 	}
 	
 	void setInfoID( int infoID )
