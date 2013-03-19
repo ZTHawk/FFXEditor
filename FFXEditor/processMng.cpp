@@ -68,12 +68,12 @@ bool EnablePriv( LPCWSTR lpszPriv ) // by Napalm
 BOOL CALLBACK EnumWindowsHandle( HWND hWnd , LPARAM lParam )
 {
 	const int bufferSize = 100;
-    TCHAR fileName[bufferSize];
-	TCHAR windowText[bufferSize];
-	TCHAR wm_Text[bufferSize];
-	memset(fileName, 0, sizeof(TCHAR) * bufferSize);
-	memset(windowText, 0, sizeof(TCHAR) * bufferSize);
-	memset(wm_Text, 0, sizeof(TCHAR) * bufferSize);
+    char fileName[bufferSize];
+	char windowText[bufferSize];
+	char wm_Text[bufferSize];
+	memset(fileName, 0, sizeof(char) * bufferSize);
+	memset(windowText, 0, sizeof(char) * bufferSize);
+	memset(wm_Text, 0, sizeof(char) * bufferSize);
 	
 	if ( hWnd == 0 )
 		return true;
@@ -81,7 +81,7 @@ BOOL CALLBACK EnumWindowsHandle( HWND hWnd , LPARAM lParam )
 	if ( IsWindowVisible(hWnd) == false )
 		return true;
 	
-	if ( SendMessage(hWnd, WM_GETTEXT, bufferSize, (LPARAM)wm_Text) == false )
+	if ( SendMessageA(hWnd, WM_GETTEXT, bufferSize, (LPARAM)wm_Text) == false )
 		return true;
 	
 	DWORD dwProcessId = 0;
@@ -90,17 +90,17 @@ BOOL CALLBACK EnumWindowsHandle( HWND hWnd , LPARAM lParam )
 	if ( hProcess == 0 )
 		return true;
 	
-	GetModuleBaseName(hProcess, NULL, (LPWSTR)fileName, bufferSize);
+	GetModuleBaseNameA(hProcess, NULL, (LPSTR)fileName, bufferSize);
 	CloseHandle(hProcess);
 	
-	if ( GetWindowText(hWnd, (LPWSTR)windowText, bufferSize) == 0 )
+	if ( GetWindowTextA(hWnd, (LPSTR)windowText, bufferSize) == 0 )
 		return true;
     
 	bool isUnicode = false;
 #if defined UNICODE
 	isUnicode = true;
 #endif
-	char *c = strstrCaseIn(reinterpret_cast<char*>(fileName), emulatorName, isUnicode);
+	char *c = strstrCaseIn(reinterpret_cast<char*>(fileName), emulatorName, false);
 	if ( c == NULL )
 		return true;
 	

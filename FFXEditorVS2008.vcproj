@@ -350,6 +350,10 @@
 					>
 				</File>
 				<File
+					RelativePath=".\FFXEditor\logManager.cpp"
+					>
+				</File>
+				<File
 					RelativePath=".\FFXEditor\utils.cpp"
 					>
 				</File>
@@ -533,6 +537,10 @@
 				>
 				<File
 					RelativePath=".\FFXEditor\cfgFileMng.hpp"
+					>
+				</File>
+				<File
+					RelativePath=".\FFXEditor\logManager.hpp"
 					>
 				</File>
 				<File

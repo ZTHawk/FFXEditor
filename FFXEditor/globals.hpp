@@ -19,6 +19,9 @@ extern unsigned int langVersion;
 class FFXEditor;
 extern FFXEditor *mainWindow;
 
+class LogManager;
+extern LogManager *logManager;
+
 extern vector<wstring> abilityNames;
 
 extern vector<wstring> odRikkuNames;
