@@ -1,7 +1,7 @@
 #ifndef FFXEDITOR_HPP
 #define FFXEDITOR_HPP
 
-#include <QtGui/QMainWindow>
+#include <QMainWindow>
 #include "ui_ffxeditor.h"
 
 #include <vector>
