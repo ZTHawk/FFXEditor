@@ -7,6 +7,7 @@ LogManager::LogManager( QString fileName , LogLvl lvl )
 	logLvl = lvl;
 	file = NULL;
 	fileStream = NULL;
+	this->fileName = fileName;
 }
 
 LogManager::~LogManager( )
