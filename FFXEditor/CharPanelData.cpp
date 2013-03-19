@@ -122,43 +122,6 @@ CharPanelData::~CharPanelData( )
 
 bool CharPanelData::initData( )
 {
-	/*attack_Text->Tag = gcnew Int32(INFO_ATTACK);
-	defense_Text->Tag = gcnew Int32(INFO_DEFENSE);
-	magic_Text->Tag = gcnew Int32(INFO_MAGIC);
-	magicDef_Text->Tag = gcnew Int32(INFO_MAGIC_DEF);
-	speed_Text->Tag = gcnew Int32(INFO_SPEED);
-	luck_Text->Tag = gcnew Int32(INFO_LUCK);
-	evade_Text->Tag = gcnew Int32(INFO_EVADE);
-	hit_Text->Tag = gcnew Int32(INFO_HIT);
-	hp_Text->Tag = gcnew Int32(INFO_HP);
-	mp_Text->Tag = gcnew Int32(INFO_MP);
-	curAP_Text->Tag = gcnew Int32(INFO_AP);
-	AP_got_till_next_lvl_Text->Tag = gcnew Int32(INFO_AP_NEXT);
-	overdrive_Text->Tag = gcnew Int32(INFO_OVERDRIVE);
-	s_lv_Text->Tag = gcnew Int32(INFO_S_LV);
-	weapon_Text->Tag = gcnew Int32(INFO_WEAPON);
-	armor_Text->Tag = gcnew Int32(INFO_ARMOR);
-	battles_Text->Tag = gcnew Int32(INFO_BATTLES);
-	enemys_Text->Tag = gcnew Int32(INFO_ENEMYS);
-	deaths_Text->Tag = gcnew Int32(INFO_DEATHS);
-	overdrive_modes_Text->Tag = gcnew Int32(INFO_OVERDRIVE_MODES);
-	overdrive_warrior_Text->Tag = gcnew Int32(INFO_OVERDRIVE_WARRIOR);
-	overdrive_comrade_Text->Tag = gcnew Int32(INFO_OVERDRIVE_COMRADE);
-	overdrive_healer_Text->Tag = gcnew Int32(INFO_OVERDRIVE_HEALER);
-	overdrive_tactician_Text->Tag = gcnew Int32(INFO_OVERDRIVE_TACTICIAN);
-	overdrive_victim_Text->Tag = gcnew Int32(INFO_OVERDRIVE_VICTIM);
-	overdrive_dancer_Text->Tag = gcnew Int32(INFO_OVERDRIVE_DANCER);
-	overdrive_avenger_Text->Tag = gcnew Int32(INFO_OVERDRIVE_AVENGER);
-	overdrive_slayer_Text->Tag = gcnew Int32(INFO_OVERDRIVE_SLAYER);
-	overdrive_hero_Text->Tag = gcnew Int32(INFO_OVERDRIVE_HERO);
-	overdrive_rook_Text->Tag = gcnew Int32(INFO_OVERDRIVE_ROOK);
-	overdrive_victor_Text->Tag = gcnew Int32(INFO_OVERDRIVE_VICTOR);
-	overdrive_coward_Text->Tag = gcnew Int32(INFO_OVERDRIVE_COWARD);
-	overdrive_ally_Text->Tag = gcnew Int32(INFO_OVERDRIVE_ALLY);
-	overdrive_sufferer_Text->Tag = gcnew Int32(INFO_OVERDRIVE_SUFFERER);
-	overdrive_daredevil_Text->Tag = gcnew Int32(INFO_OVERDRIVE_DAREDEVIL);
-	overdrive_solo_Text->Tag = gcnew Int32(INFO_OVERDRIVE_SOLO);
-	*/
 	return true;
 }
 

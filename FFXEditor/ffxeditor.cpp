@@ -128,7 +128,7 @@ void FFXEditor::init( )
 				langVersion = LANG_US;
 		}
 	}
-	initData();
+	initData(BASE_OFFSET_BASE == 0);
 }
 
 void FFXEditor::initNames( )
@@ -336,9 +336,10 @@ void FFXEditor::setInfo( QString msg )
 	ui.infoLabel->setPlainText(msg);
 }
 
-void FFXEditor::initData( )
+void FFXEditor::initData( bool errorOccured )
 {
-	SendNotificationID(INFO_GLOBAL);
+	if ( errorOccured == false )
+		SendNotificationID(INFO_GLOBAL);
 	
 	bool result = true;
 	for ( size_t i = 0; i < panelsMenu.size(); ++i )

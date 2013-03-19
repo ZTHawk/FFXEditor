@@ -39,6 +39,19 @@ ItemPanel::ItemPanel( QWidget *p )
 	ui.items_Text->setText(QString::fromStdWString(guiList[GN_IP_ITEM]));
 	ui.keyItems_Text->setText(QString::fromStdWString(guiList[GN_IP_KEYS]));
 	
+	QStringList strLst;
+	for ( int i = 0; i < KEY_ITEM_NAMES_SIZE; ++i )
+		strLst << QString::fromStdWString(keyItemNames[i]);
+	ui.keyItems->addItems(strLst);
+	
+	QColor base = QColor(Qt::white);
+	altBase = QColor(211, 211, 211, 180);
+	for ( int i = 0; i < KEY_ITEM_NAMES_SIZE; ++i )
+	{
+		ui.keyItems->item(i)->setCheckState(Qt::Unchecked);
+		ui.keyItems->item(i)->setBackgroundColor((i % 2) == 0 ? base : altBase);
+	}
+	
 	connect(ui.items_Text, SIGNAL(clicked()), this, SLOT(text_Click()));
 	connect(ui.keyItems_Text, SIGNAL(clicked()), this, SLOT(text_Click()));
 }
@@ -50,18 +63,6 @@ ItemPanel::~ItemPanel( )
 
 bool ItemPanel::initData( )
 {
-	QStringList strLst;
-	for ( int i = 0; i < KEY_ITEM_NAMES_SIZE; ++i )
-		strLst << QString::fromStdWString(keyItemNames[i]);
-	ui.keyItems->addItems(strLst);
-	
-	QColor base = QColor(Qt::white),
-		altBase = QColor(211, 211, 211, 180);
-	for ( int i = 0; i < KEY_ITEM_NAMES_SIZE; ++i )
-	{
-		ui.keyItems->item(i)->setCheckState(Qt::Unchecked);
-		ui.keyItems->item(i)->setBackgroundColor((i % 2) == 0 ? base : altBase);
-	}
 	return reloadData(0);
 }
 

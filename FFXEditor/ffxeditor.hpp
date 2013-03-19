@@ -25,7 +25,7 @@ private:
 	Ui::FFXEditorClass ui;
 	vector<MyPanel*> panelsMenu;
 	
-	void initData( );
+	void initData( bool errorOccured );
 	void initNames( );
 	void initGUINames( );
 	void initInfoNames( );
