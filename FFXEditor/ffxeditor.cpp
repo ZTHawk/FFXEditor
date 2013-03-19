@@ -85,7 +85,7 @@ FFXEditor::FFXEditor(QWidget *parent, Qt::WFlags flags)
 
 FFXEditor::~FFXEditor()
 {
-
+	delete logManager;
 }
 
 void FFXEditor::init( )
