@@ -5,6 +5,11 @@
 #include <QString>
 #include <QTextStream>
 
+#include <string.h>
+
+using std::string;
+using std::wstring;
+
 class LogManager
 {
 public:
@@ -27,6 +32,8 @@ public:
 	bool isActiveLevel( LogLvl lvl = LOG_WARNING );
 	void log( LogLvl lvl , QString text );
 	void log( QString text );
+	void log( std::string text );
+	void log( std::wstring text );
 	
 private:
 	LogLvl logLvl;

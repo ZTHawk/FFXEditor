@@ -60,3 +60,13 @@ void LogManager::log( QString text )
 	QDateTime date = QDateTime::currentDateTime();
 	*fileStream << date.toString("<yyyy.MM.dd hh:mm:ss> ") << text << "\n";
 }
+
+void LogManager::log( std::string text )
+{
+	log(QString::fromStdString(text));
+}
+
+void LogManager::log( std::wstring text )
+{
+	log(QString::fromStdWString(text));
+}
