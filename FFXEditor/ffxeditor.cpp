@@ -88,7 +88,7 @@ FFXEditor::~FFXEditor()
 	
 }
 
-void FFXEditor::init( )
+void FFXEditor::init( CfgFileMng *cfgFileMng )
 {
 	FindProcess();
 	memMng = new MemMng();
@@ -129,6 +129,10 @@ void FFXEditor::init( )
 		}
 	}
 	initData(BASE_OFFSET_BASE == 0);
+	if ( cfgFileMng != NULL )
+	{
+		ui.menuBox->setCurrentIndex(cfgFileMng->getInt(L"initialSection", 0));
+	}
 }
 
 void FFXEditor::initNames( )

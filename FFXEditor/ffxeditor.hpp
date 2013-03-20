@@ -9,6 +9,7 @@
 using std::vector;
 
 class MyPanel;
+class CfgFileMng;
 
 class FFXEditor : public QMainWindow
 {
@@ -18,7 +19,7 @@ public:
 	FFXEditor(QWidget *parent = 0, Qt::WFlags flags = 0);
 	~FFXEditor();
 	
-	void init( );
+	void init( CfgFileMng *cfgFileMng );
 	void setInfo( QString msg );
 	
 private:
