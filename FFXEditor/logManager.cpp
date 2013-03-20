@@ -77,7 +77,7 @@ LogManager& LogManager::operator()( int curLogLvl )
 {
 	this->curLogLvl = curLogLvl;
 	if ( curLogLvl != -1
-		&& curLogLvl > logLvl )
+		&& curLogLvl < logLvl )
 		return *this;
 	initStream();
 	QDateTime date = QDateTime::currentDateTime();
@@ -88,7 +88,7 @@ LogManager& LogManager::operator()( int curLogLvl )
 LogManager& LogManager::operator<<( std::string str )
 {
 	if ( curLogLvl != -1
-		&& curLogLvl > logLvl )
+		&& curLogLvl < logLvl )
 		return *this;
 	*fileStream << QString::fromStdString(str);
 	return *this;
@@ -97,7 +97,7 @@ LogManager& LogManager::operator<<( std::string str )
 LogManager& LogManager::operator<<( std::wstring str )
 {
 	if ( curLogLvl != -1
-		&& curLogLvl > logLvl )
+		&& curLogLvl < logLvl )
 		return *this;
 	*fileStream << QString::fromStdWString(str);
 	return *this;
@@ -106,7 +106,7 @@ LogManager& LogManager::operator<<( std::wstring str )
 LogManager& LogManager::operator<<( unsigned int val )
 {
 	if ( curLogLvl != -1
-		&& curLogLvl > logLvl )
+		&& curLogLvl < logLvl )
 		return *this;
 	*fileStream << val;
 	return *this;
@@ -115,7 +115,7 @@ LogManager& LogManager::operator<<( unsigned int val )
 LogManager& LogManager::operator<<( int val )
 {
 	if ( curLogLvl != -1
-		&& curLogLvl > logLvl )
+		&& curLogLvl < logLvl )
 		return *this;
 	*fileStream << val;
 	return *this;
@@ -124,7 +124,7 @@ LogManager& LogManager::operator<<( int val )
 LogManager& LogManager::operator<<( LogFuncs val )
 {
 	if ( curLogLvl != -1
-		&& curLogLvl > logLvl )
+		&& curLogLvl < logLvl )
 		return *this;
 	*fileStream << "\n";
 	fileStream->flush();
