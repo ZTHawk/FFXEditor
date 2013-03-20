@@ -51,14 +51,14 @@ bool EnablePriv( LPCWSTR lpszPriv ) // by Napalm
 	TOKEN_PRIVILEGES tkprivs;
 	memset(&tkprivs, 0, sizeof(tkprivs));
 	
-	(*logManager)(LogManager::LOG_WARNING)
+	(*logManager)(LogManager::LOG_DEBUG)
 		<< L"Setting privileges for pid="
 		<< reinterpret_cast<int>(GetCurrentProcess())
 		<< LogManager::endl;
 	
 	if ( OpenProcessToken(GetCurrentProcess(), (TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY), &hToken) == false )
 	{
-		(*logManager)(LogManager::LOG_WARNING)
+		(*logManager)(LogManager::LOG_DEBUG)
 			<< L"  Could not open tokens.\n"
 			<< L"  Error="
 			<< static_cast<int>(GetLastError())
@@ -69,7 +69,7 @@ bool EnablePriv( LPCWSTR lpszPriv ) // by Napalm
 	if ( LookupPrivilegeValue(NULL, lpszPriv, &luid) == false )
 	{
 		CloseHandle(hToken);
-		(*logManager)(LogManager::LOG_WARNING)
+		(*logManager)(LogManager::LOG_DEBUG)
 			<< L"  Could not lookup privileges.\n"
 			<< L"  Error="
 			<< static_cast<int>(GetLastError())
@@ -84,7 +84,7 @@ bool EnablePriv( LPCWSTR lpszPriv ) // by Napalm
 	bool bRet = AdjustTokenPrivileges(hToken, false, &tkprivs, sizeof(tkprivs), NULL, NULL);
 	CloseHandle(hToken);
 	
-	(*logManager)(LogManager::LOG_WARNING)
+	(*logManager)(LogManager::LOG_DEBUG)
 		<< L"Adjusted privileges with Error="
 		<< static_cast<int>(GetLastError())
 		<< LogManager::endl;
@@ -105,14 +105,14 @@ BOOL CALLBACK EnumWindowsHandle( HWND hWnd , LPARAM lParam )
 	if ( hWnd == 0 )
 		return true;
 	
-	(*logManager)(LogManager::LOG_WARNING)
+	(*logManager)(LogManager::LOG_DEBUG)
 		<< L"New item: "
 		<< reinterpret_cast<int>(hWnd);
 	
 	if ( IsWindowVisible(hWnd) == false )
 		return true;
 	
-	(*logManager)(LogManager::LOG_WARNING)
+	(*logManager)(LogManager::LOG_DEBUG)
 		<< L"  Visible";
 	
 	if ( SendMessage(hWnd, WM_GETTEXT, bufferSize, (LPARAM)wm_Text) == false )
@@ -122,7 +122,7 @@ BOOL CALLBACK EnumWindowsHandle( HWND hWnd , LPARAM lParam )
 	DWORD dwThreadId = GetWindowThreadProcessId(hWnd, &dwProcessId);
 	HANDLE hProcess = OpenProcess(ACCESS_RIGHTS, false, dwProcessId);
 	
-	(*logManager)(LogManager::LOG_WARNING)
+	(*logManager)(LogManager::LOG_DEBUG)
 		<< L"  WM=\""
 		<< wm_Text
 		<< L"\" with pid="
@@ -139,7 +139,7 @@ BOOL CALLBACK EnumWindowsHandle( HWND hWnd , LPARAM lParam )
 	GetModuleBaseName(hProcess, NULL, (LPWSTR)fileName, bufferSize);
 	CloseHandle(hProcess);
 	
-	(*logManager)(LogManager::LOG_WARNING)
+	(*logManager)(LogManager::LOG_DEBUG)
 		<< L"  Filename=\""
 		<< fileName
 		<< L"\""
@@ -154,7 +154,7 @@ BOOL CALLBACK EnumWindowsHandle( HWND hWnd , LPARAM lParam )
 #if defined UNICODE
 	isUnicode = true;
 #endif
-	(*logManager)(LogManager::LOG_WARNING)
+	(*logManager)(LogManager::LOG_DEBUG)
 		<< L"  WT=\""
 		<< windowText
 		<< L"\""
@@ -165,7 +165,7 @@ BOOL CALLBACK EnumWindowsHandle( HWND hWnd , LPARAM lParam )
 		return true;
 	
 	emulatorProcessID = static_cast<int>(dwProcessId);
-	(*logManager)(LogManager::LOG_WARNING)
+	(*logManager)(LogManager::LOG_DEBUG)
 		<< L"  found: "
 		<< emulatorProcessID
 		<< LogManager::endl;
