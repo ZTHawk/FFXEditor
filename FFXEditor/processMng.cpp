@@ -2,9 +2,14 @@
 #include "constants.hpp"
 #include "globals.hpp"
 #include "utils.hpp"
+#include "logManager.hpp"
+#include "string_helper.hpp"
 
 #include "windows.h"
 #include "Psapi.h"
+
+#define ACCESS_RIGHTS \
+	(PROCESS_VM_READ | PROCESS_VM_WRITE | PROCESS_QUERY_INFORMATION)
 
 bool EnablePriv( LPCWSTR lpszPriv );
 BOOL CALLBACK EnumWindowsHandle( HWND hWnd , LPARAM lParam );
@@ -41,82 +46,129 @@ bool ProcWriteMem( int handle , int address , void *buf , int len , int &bytesWr
 
 bool EnablePriv( LPCWSTR lpszPriv ) // by Napalm
 {
-    PHANDLE hToken = NULL;
-    LUID luid;
-    TOKEN_PRIVILEGES tkprivs;
+	HANDLE hToken;
+	LUID luid;
+	TOKEN_PRIVILEGES tkprivs;
 	memset(&tkprivs, 0, sizeof(tkprivs));
-    
-    if ( OpenProcessToken(GetCurrentProcess(), (TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY), hToken) == false )
-        return false;
-    
-    if ( LookupPrivilegeValue(NULL, lpszPriv, &luid) == false )
-	{
-        CloseHandle(hToken);
-		return false;
-    }
-    
-    tkprivs.PrivilegeCount = 1;
-    tkprivs.Privileges[0].Luid = luid;
-    tkprivs.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED;
-    
-    bool bRet = AdjustTokenPrivileges(hToken, false, &tkprivs, sizeof(tkprivs), NULL, NULL);
-    CloseHandle(hToken);
 	
-    return bRet;
+	(*logManager)(LogManager::LOG_WARNING)
+		<< L"Setting privileges for pid="
+		<< reinterpret_cast<int>(GetCurrentProcess())
+		<< LogManager::endl;
+	
+	if ( OpenProcessToken(GetCurrentProcess(), (TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY), &hToken) == false )
+	{
+		(*logManager)(LogManager::LOG_WARNING)
+			<< L"  Could not open tokens.\n"
+			<< L"  Error="
+			<< static_cast<int>(GetLastError())
+			<< LogManager::endl;
+		return false;
+	}
+	
+	if ( LookupPrivilegeValue(NULL, lpszPriv, &luid) == false )
+	{
+		CloseHandle(hToken);
+		(*logManager)(LogManager::LOG_WARNING)
+			<< L"  Could not lookup privileges.\n"
+			<< L"  Error="
+			<< static_cast<int>(GetLastError())
+			<< LogManager::endl;
+		return false;
+	}
+	
+	tkprivs.PrivilegeCount = 1;
+	tkprivs.Privileges[0].Luid = luid;
+	tkprivs.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED;
+	
+	bool bRet = AdjustTokenPrivileges(hToken, false, &tkprivs, sizeof(tkprivs), NULL, NULL);
+	CloseHandle(hToken);
+	
+	(*logManager)(LogManager::LOG_WARNING)
+		<< L"Adjusted privileges with Error="
+		<< static_cast<int>(GetLastError())
+		<< LogManager::endl;
+	
+	return bRet;
 }
 
 BOOL CALLBACK EnumWindowsHandle( HWND hWnd , LPARAM lParam )
 {
 	const int bufferSize = 100;
-    char fileName[bufferSize];
-	char windowText[bufferSize];
-	char wm_Text[bufferSize];
-	memset(fileName, 0, sizeof(char) * bufferSize);
-	memset(windowText, 0, sizeof(char) * bufferSize);
-	memset(wm_Text, 0, sizeof(char) * bufferSize);
+    TCHAR fileName[bufferSize];
+	TCHAR windowText[bufferSize];
+	TCHAR wm_Text[bufferSize];
+	memset(fileName, 0, sizeof(TCHAR) * bufferSize);
+	memset(windowText, 0, sizeof(TCHAR) * bufferSize);
+	memset(wm_Text, 0, sizeof(TCHAR) * bufferSize);
 	
 	if ( hWnd == 0 )
 		return true;
 	
+	(*logManager)(LogManager::LOG_WARNING)
+		<< L"New item: "
+		<< reinterpret_cast<int>(hWnd);
+	
 	if ( IsWindowVisible(hWnd) == false )
 		return true;
 	
-	if ( SendMessageA(hWnd, WM_GETTEXT, bufferSize, (LPARAM)wm_Text) == false )
+	(*logManager)(LogManager::LOG_WARNING)
+		<< L"  Visible";
+	
+	if ( SendMessage(hWnd, WM_GETTEXT, bufferSize, (LPARAM)wm_Text) == false )
 		return true;
 	
 	DWORD dwProcessId = 0;
 	DWORD dwThreadId = GetWindowThreadProcessId(hWnd, &dwProcessId);
-	HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS, false, dwProcessId);
+	HANDLE hProcess = OpenProcess(ACCESS_RIGHTS, false, dwProcessId);
+	
+	(*logManager)(LogManager::LOG_WARNING)
+		<< L"  WM=\""
+		<< wm_Text
+		<< L"\" with pid="
+		<< static_cast<int>(dwProcessId)
+		<< L" and with handle="
+		<< reinterpret_cast<int>(hProcess)
+		<< L"\n    Error="
+		<< static_cast<int>(GetLastError())
+		<< LogManager::endl;
+	
 	if ( hProcess == 0 )
 		return true;
 	
-	GetModuleBaseNameA(hProcess, NULL, (LPSTR)fileName, bufferSize);
+	GetModuleBaseName(hProcess, NULL, (LPWSTR)fileName, bufferSize);
 	CloseHandle(hProcess);
 	
-	if ( GetWindowTextA(hWnd, (LPSTR)windowText, bufferSize) == 0 )
+	(*logManager)(LogManager::LOG_WARNING)
+		<< L"  Filename=\""
+		<< fileName
+		<< L"\""
+		<< L"\n    Error="
+		<< static_cast<int>(GetLastError())
+		<< LogManager::endl;
+	
+	if ( GetWindowText(hWnd, (LPWSTR)windowText, bufferSize) == 0 )
 		return true;
     
 	bool isUnicode = false;
 #if defined UNICODE
 	isUnicode = true;
 #endif
-	char *c = strstrCaseIn(reinterpret_cast<char*>(fileName), emulatorName, false);
+	(*logManager)(LogManager::LOG_WARNING)
+		<< L"  WT=\""
+		<< windowText
+		<< L"\""
+		<< LogManager::endl;
+	
+	char *c = strstrCaseIn(reinterpret_cast<char*>(fileName), emulatorName, isUnicode);
 	if ( c == NULL )
 		return true;
-	
-	/*c = strstrCaseIn(windowText, emulatorName);
-	if ( c == NULL )
-		return true;
-	
-	c = strstrCaseIn(wm_Text, emulatorName);
-	if ( c == NULL )
-		return true;
-	
-	if ( strstr(windowText, emulatorVersion) == NULL )
-		return true;
-	*/
 	
 	emulatorProcessID = static_cast<int>(dwProcessId);
+	(*logManager)(LogManager::LOG_WARNING)
+		<< L"  found: "
+		<< emulatorProcessID
+		<< LogManager::endl;
 	
     return true;
 }
