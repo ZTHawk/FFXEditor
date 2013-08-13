@@ -75,7 +75,7 @@ bool ItemPanel::reloadData( int depth )
 	
 	int counter = 0;
 	int maxCounter = 0;
-	for ( int i = 255; i >= 0; --i )
+	/*for ( int i = 255; i >= 0; --i )
 	{
 		if ( itemData->itemIDList[i].bitmask > 0
 			&& itemData->itemAmountList[i] > 0 )
@@ -83,13 +83,18 @@ bool ItemPanel::reloadData( int depth )
 			maxCounter = i;
 			break;
 		}
-	}
+	}*/
+	maxCounter = 111;
+	ui.items_table->setRowCount((maxCounter / 2) + 1);
+	QStringList itemNameLst;
+	for ( int i = 0; i < ITEM_NAMES_SIZE; ++i )
+		itemNameLst << QString::fromStdWString(itemNames[i]);
 	
 	for ( ; counter <= maxCounter; ++counter )
 	{
 		if ( counter % 2 == 0 )
 		{
-			ui.items_table->setRowCount((counter / 2) + 1);
+			//ui.items_table->setRowCount((counter / 2) + 1);
 			ui.items_table->setRowHeight(counter / 2, 30);
 		}
 		
@@ -97,16 +102,17 @@ bool ItemPanel::reloadData( int depth )
 		QLineEdit *tmpTextBox = new QLineEdit(ui.items_table);
 		tmpTextBox->setFixedHeight(20);
 		tmpComboBox->setFixedSize(121, 20);
-		tmpTextBox->setStyleSheet("margin: 0 5 0 2;");
+		tmpTextBox->setStyleSheet("QLineEdit{margin: 0 5 0 2;}");
 		tmpComboBox->view()->setTextElideMode(Qt::ElideNone);
 		tmpComboBox->setMaxVisibleItems(30);
 		tmpComboBox->installEventFilter(this);
 		
-		for ( int i = 0; i < ITEM_NAMES_SIZE; ++i )
-			tmpComboBox->addItem(QString::fromStdWString(itemNames[i]));
+		//for ( int i = 0; i < ITEM_NAMES_SIZE; ++i )
+		//	tmpComboBox->addItem(QString::fromStdWString(itemNames[i]));
+		tmpComboBox->addItems(itemNameLst);
 		
-		if ( itemData->itemIDList[counter].bitmask == 0 )
-			continue;
+		//if ( itemData->itemIDList[counter].bitmask == 0 )
+		//	continue;
 		
 		if ( itemData->itemIDList[counter].itemID >= ITEM_NAMES_SIZE
 			|| itemData->itemAmountList[counter] == 0 )
@@ -144,9 +150,14 @@ bool ItemPanel::checkData( int depth )
 {
 	int count = ui.items_table->rowCount() * 2;
 	bool result = true;
+	QLineEdit *lineEdit;
 	for ( int i = 0; i < count; ++i )
 	{
-		result &= checkEntry(dynamic_cast<QLineEdit*>(ui.items_table->cellWidget(i / 2, (i % 2) * 2 + 1)),
+		lineEdit = dynamic_cast<QLineEdit*>(ui.items_table->cellWidget(i / 2, (i % 2) * 2 + 1));
+		if ( lineEdit == NULL )
+			continue;
+		
+		result &= checkEntry(lineEdit,
 			&itemData->itemAmountList[i],
 			DATA_ITEM);
 		if ( result == false )
@@ -157,9 +168,14 @@ bool ItemPanel::checkData( int depth )
 	}
 	
 	int selectedIndex = 0;
+	QComboBox *comboBox;
 	for ( int i = 0; i < count; ++i )
 	{
-		selectedIndex = (dynamic_cast<QComboBox*>(ui.items_table->cellWidget(i / 2, (i % 2) * 2)))->currentIndex();
+		comboBox = dynamic_cast<QComboBox*>(ui.items_table->cellWidget(i / 2, (i % 2) * 2));
+		if ( comboBox == NULL )
+			continue;
+		
+		selectedIndex = comboBox->currentIndex();
 		if ( selectedIndex == ITEM_NAMES_SIZE - 1
 			|| selectedIndex == -1 )
 		{
