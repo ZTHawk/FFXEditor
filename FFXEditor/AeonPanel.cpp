@@ -96,6 +96,8 @@ AeonPanel::AeonPanel( QWidget *p )
 		ui.abilityList->addItem(QString::fromStdWString(abilityNames[i]));
 		ui.abilityList->item(i)->setCheckState(Qt::Unchecked);
 	}
+	
+	checkData(2);
 }
 
 AeonPanel::~AeonPanel( )

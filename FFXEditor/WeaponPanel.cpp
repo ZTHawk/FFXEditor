@@ -106,6 +106,11 @@ WeaponPanel::WeaponPanel( QWidget *p )
 	connect(ui.slotCnt, SIGNAL(currentIndexChanged(int)), this, SLOT(weaponSlotCnt_SelectedIndexChanged(int)));
 	connect(ui.weaponType, SIGNAL(currentIndexChanged(int)), this, SLOT(weaponType_SelectedIndexChanged(int)));
 	connect(ui.weaponModel, SIGNAL(currentIndexChanged(int)), this, SLOT(weaponModel_SelectedIndexChanged(int)));
+	
+	// this will initialize stylesheet
+	int tmpVal;
+	checkEntry(ui.attack, &tmpVal, DATA_ATTRIBUTE);
+	checkEntry(ui.critHit, &tmpVal, DATA_ATTRIBUTE);
 }
 
 WeaponPanel::~WeaponPanel( )

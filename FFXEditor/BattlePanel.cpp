@@ -117,6 +117,9 @@ BattlePanel::BattlePanel( QWidget *p )
 	connect(ui.unlockButton, SIGNAL(clicked(bool)), this, SLOT(unlockButtonPressed()));
 	connect(ui.lockButton, SIGNAL(clicked(bool)), this, SLOT(lockButtonPressed()));
 	connect(ui.rescanButton, SIGNAL(clicked(bool)), this, SLOT(rescanButtonPressed()));
+	
+	BATTLEDATA tmpBattleData;
+	getVariables(&tmpBattleData);
 }
 
 BattlePanel::~BattlePanel( )

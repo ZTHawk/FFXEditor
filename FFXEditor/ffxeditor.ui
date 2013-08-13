@@ -29,6 +29,10 @@
    <string notr="true">QMainWindow
 {
 border-image: url(:/FFXEditor/Resources/Final_Fantasy_X_Logo.png);
+}
+QWidget[bad=&quot;on&quot;]
+{
+background-color:red;
 }</string>
   </property>
   <widget class="QWidget" name="centralWidget">

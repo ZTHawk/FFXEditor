@@ -18,7 +18,7 @@
 	background-color: white;
 	padding: 2 2 2 2;
 }
-QLineEdit{
+QLineEdit[bad=&quot;off&quot;]{
 	background-color: rgba(233, 233, 233, 220);
 }</string>
   </property>

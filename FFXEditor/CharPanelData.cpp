@@ -113,6 +113,8 @@ CharPanelData::CharPanelData( QWidget *p )
 	connect(ui.overdrive_sufferer_Text, SIGNAL(clicked()), this, SLOT(text_Click()));
 	connect(ui.overdrive_daredevil_Text, SIGNAL(clicked()), this, SLOT(text_Click()));
 	connect(ui.overdrive_solo_Text, SIGNAL(clicked()), this, SLOT(text_Click()));
+	
+	checkData(0);
 }
 
 CharPanelData::~CharPanelData( )
@@ -254,7 +256,67 @@ bool CharPanelData::GetVariables( CharData *charData )
 
 bool CharPanelData::checkData( int depth )
 {
-	return true;
+	bool result = true;
+	int dummyVal;
+	result &= checkEntry(ui.attack_basic, &dummyVal, DATA_ATTRIBUTE);
+	result &= checkEntry(ui.attack_current, &dummyVal, DATA_ATTRIBUTE);
+	result &= checkEntry(ui.defense_basic, &dummyVal, DATA_ATTRIBUTE);
+	result &= checkEntry(ui.defense_current, &dummyVal, DATA_ATTRIBUTE);
+	result &= checkEntry(ui.magic_basic, &dummyVal, DATA_ATTRIBUTE);
+	result &= checkEntry(ui.magic_current, &dummyVal, DATA_ATTRIBUTE);
+	result &= checkEntry(ui.magicDef_basic, &dummyVal, DATA_ATTRIBUTE);
+	result &= checkEntry(ui.magicDef_current, &dummyVal, DATA_ATTRIBUTE);
+	result &= checkEntry(ui.speed_basic, &dummyVal, DATA_ATTRIBUTE);
+	result &= checkEntry(ui.speed_current, &dummyVal, DATA_ATTRIBUTE);
+	result &= checkEntry(ui.luck_basic, &dummyVal, DATA_ATTRIBUTE);
+	result &= checkEntry(ui.luck_current, &dummyVal, DATA_ATTRIBUTE);
+	result &= checkEntry(ui.evade_basic, &dummyVal, DATA_ATTRIBUTE);
+	result &= checkEntry(ui.evade_current, &dummyVal, DATA_ATTRIBUTE);
+	result &= checkEntry(ui.hit_basic, &dummyVal, DATA_ATTRIBUTE);
+	result &= checkEntry(ui.hit_current, &dummyVal, DATA_ATTRIBUTE);
+	
+	// ap_hp_mp
+	result &= checkEntry(ui.hp_max_base, &dummyVal, DATA_HP);
+	result &= checkEntry(ui.mp_max_base, &dummyVal, DATA_HP);
+	result &= checkEntry(ui.curAP, &dummyVal, DATA_UINT);
+	result &= checkEntry(ui.AP_got_till_next_lvl, &dummyVal, DATA_UINT);
+	result &= checkEntry(ui.hp_current, &dummyVal, DATA_HP);
+	result &= checkEntry(ui.mp_current, &dummyVal, DATA_HP);
+	result &= checkEntry(ui.hp_max, &dummyVal, DATA_HP);
+	result &= checkEntry(ui.mp_max, &dummyVal, DATA_HP);
+	
+	// overdrive
+	result &= checkEntry(ui.overdrive_current, &dummyVal, DATA_UCHAR);
+	result &= checkEntry(ui.overdrive_max, &dummyVal, DATA_UCHAR);
+	
+	// s_lvl
+	result &= checkEntry(ui.s_lv_current, &dummyVal, DATA_UCHAR);
+	result &= checkEntry(ui.s_lv_used, &dummyVal, DATA_UCHAR);
+	
+	// battle_status
+	result &= checkEntry(ui.battles, &dummyVal, DATA_UINT);
+	result &= checkEntry(ui.enemys, &dummyVal, DATA_UINT);
+	result &= checkEntry(ui.deaths, &dummyVal, DATA_UINT);
+	
+	// overdrive modes
+	result &= checkEntry(ui.overdrive_warrior, &dummyVal, DATA_USHORT);
+	result &= checkEntry(ui.overdrive_comrade, &dummyVal, DATA_USHORT);
+	result &= checkEntry(ui.overdrive_healer, &dummyVal, DATA_USHORT);
+	result &= checkEntry(ui.overdrive_tactician, &dummyVal, DATA_USHORT);
+	result &= checkEntry(ui.overdrive_victim, &dummyVal, DATA_USHORT);
+	result &= checkEntry(ui.overdrive_dancer, &dummyVal, DATA_USHORT);
+	result &= checkEntry(ui.overdrive_avenger, &dummyVal, DATA_USHORT);
+	result &= checkEntry(ui.overdrive_slayer, &dummyVal, DATA_USHORT);
+	result &= checkEntry(ui.overdrive_hero, &dummyVal, DATA_USHORT);
+	result &= checkEntry(ui.overdrive_rook, &dummyVal, DATA_USHORT);
+	result &= checkEntry(ui.overdrive_victor, &dummyVal, DATA_USHORT);
+	result &= checkEntry(ui.overdrive_coward, &dummyVal, DATA_USHORT);
+	result &= checkEntry(ui.overdrive_ally, &dummyVal, DATA_USHORT);
+	result &= checkEntry(ui.overdrive_sufferer, &dummyVal, DATA_USHORT);
+	result &= checkEntry(ui.overdrive_daredevil, &dummyVal, DATA_USHORT);
+	result &= checkEntry(ui.overdrive_solo, &dummyVal, DATA_USHORT);
+	
+	return result;
 }
 
 bool CharPanelData::writeData( int depth )

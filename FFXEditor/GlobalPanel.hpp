@@ -20,6 +20,10 @@ public:
 private:
 	Ui::GlobalPanel ui;
 	int gilNum;
+	
+public slots:
+	void tEdit( );
+	void tfEdit( );
 };
 
 #endif // GLOBAL_PANEL_HPP

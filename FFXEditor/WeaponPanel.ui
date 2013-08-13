@@ -19,7 +19,7 @@
 	padding: 2 2 2 2;
 	text-align: left;
 }
-QLineEdit{
+QLineEdit[bad=&quot;off&quot;]{
 	background-color: rgba(233, 233, 233, 220);
 }</string>
   </property>

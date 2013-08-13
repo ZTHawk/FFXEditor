@@ -18,7 +18,7 @@
 	background-color: white;
 	padding: 2 2 2 2;
 }
-QLineEdit{
+QLineEdit[bad=&quot;off&quot;]{
 	background-color: rgba(233, 233, 233, 220);
 }</string>
   </property>
@@ -52,6 +52,26 @@ QLineEdit{
    </property>
    <property name="placeholderText">
     <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="t">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>60</y>
+     <width>241</width>
+     <height>161</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="tf">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>70</y>
+     <width>211</width>
+     <height>151</height>
+    </rect>
    </property>
   </widget>
  </widget>
