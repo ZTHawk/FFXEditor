@@ -22,23 +22,7 @@ public:
 	virtual bool reloadData( int depth = 0 ) = 0;
 	virtual bool checkData( int depth = 0 ) = 0;
 	virtual bool writeData( int depth = 0 ) = 0;
-	bool checkEntry( QLineEdit *textBox , void *buf , int type )
-	{
-		bool result = true;
-		QString str = textBox->text();
-		QByteArray arr = str.toAscii();
-		char *cStr = arr.data();
-		result &= stringToValue_Check(cStr,
-			buf,
-			type);
-		
-		if ( result == false )
-			textBox->setStyleSheet("background-color: red;");
-		else
-			textBox->setStyleSheet("");
-		
-		return result;
-	};
+	bool checkEntry( QLineEdit *textBox , void *buf , int type );
 	
 protected:
 	class ButtonData : public QObjectUserData

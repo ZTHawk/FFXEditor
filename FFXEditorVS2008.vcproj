@@ -47,7 +47,7 @@
 				AdditionalOptions="/MP"
 				Optimization="3"
 				AdditionalIncludeDirectories="&quot;.\GeneratedFiles&quot;;&quot;.&quot;;&quot;$(QTDIR)\include&quot;;&quot;.\GeneratedFiles\$(ConfigurationName)&quot;;&quot;$(QTDIR)\include\QtCore&quot;;&quot;$(QTDIR)\include\QtGui&quot;"
-				PreprocessorDefinitions=",UNICODE,WIN32,QT_LARGEFILE_SUPPORT;QT_DLL;QT_NO_DEBUG,NDEBUG;QT_CORE_LIB;QT_GUI_LIB"
+				PreprocessorDefinitions="NDEBUG,UNICODE,WIN32,QT_LARGEFILE_SUPPORT;QT_DLL;QT_NO_DEBUG,NDEBUG;QT_CORE_LIB;QT_GUI_LIB"
 				StringPooling="true"
 				RuntimeLibrary="2"
 				TreatWChar_tAsBuiltInType="false"
@@ -411,6 +411,10 @@
 				</File>
 				<File
 					RelativePath=".\FFXEditor\ItemPanel.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\FFXEditor\MyPanel.cpp"
 					>
 				</File>
 				<File
