@@ -407,6 +407,9 @@ void FFXEditor::reloadButtonSection_Click( )
 	int panelIndex = ui.menuBox->currentIndex();
 	bool result = true;
 	result &= panelsMenu[panelIndex]->reloadData();
+	// char panel has to be reloaded to overcome weaponID issues
+	if ( panelIndex == PANEL_WEAPON )
+		result &= panelsMenu[PANEL_CHAR]->reloadData();
 }
 
 void FFXEditor::saveButtonSection_Click( )
@@ -435,6 +438,9 @@ void FFXEditor::reloadButton_Click( )
 	int panelIndex = ui.menuBox->currentIndex();
 	bool result = true;
 	result &= panelsMenu[panelIndex]->reloadData(2);
+	// char panel has to be reloaded to overcome weaponID issues
+	if ( panelIndex == PANEL_WEAPON )
+		result &= panelsMenu[PANEL_CHAR]->reloadData();
 }
 
 void FFXEditor::SaveButton_Click( )
