@@ -346,13 +346,9 @@ void AeonPanel::slotUpdateWeaponOwner( QVector<int> weapOwnerDataVec )
 		if ( oldWeapID != aeonData[i]->data->weaponID
 			|| oldShieldID != aeonData[i]->data->shieldID )
 		{
-			int a = 1;
-			if ( a == 1 )
-			{
-				aeonData[i]->data->weaponID = oldWeapID;
-				aeonData[i]->data->shieldID = oldShieldID;
-				aeonData[i]->writeWeaponIDs_Data();
-			}
+			aeonData[i]->data->weaponID = oldWeapID;
+			aeonData[i]->data->shieldID = oldShieldID;
+			aeonData[i]->writeWeaponIDs_Data();
 		}
 	}
 }
