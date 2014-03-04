@@ -345,17 +345,17 @@ bool WeaponPanel::writeData( int depth )
 			tmpOwnerData.isArmor = wData.isArmor;
 			for ( j = 0; j < weapOwnerDataVec.size(); ++j )
 			{
-				tmpOwnerData2.i = weapOwnerDataVec[j];
+				tmpOwnerData2.iVal = weapOwnerDataVec[j];
 				if ( tmpOwnerData2.charID != tmpOwnerData.charID )
 					continue;
 				if ( tmpOwnerData2.isArmor != tmpOwnerData.isArmor )
 					continue;
 				tmpOwnerData2.weaponSlotIndex = tmpOwnerData.weaponSlotIndex;
-				weapOwnerDataVec[j] = tmpOwnerData2.i;
+				weapOwnerDataVec[j] = tmpOwnerData2.iVal;
 				break;
 			}
 			if ( j >= weapOwnerDataVec.size() )
-				weapOwnerDataVec.push_back(tmpOwnerData.i);
+				weapOwnerDataVec.push_back(tmpOwnerData.iVal);
 		}
 		emit updateWeaponOwner(weapOwnerDataVec);
 	}

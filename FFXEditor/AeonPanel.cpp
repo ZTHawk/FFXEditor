@@ -335,7 +335,7 @@ void AeonPanel::slotUpdateWeaponOwner( QVector<int> weapOwnerDataVec )
 		oldShieldID = aeonData[i]->data->shieldID;
 		for ( j = 0; j < weapOwnerDataVec.size(); ++j )
 		{
-			tmpOwnerData.i = weapOwnerDataVec[j];
+			tmpOwnerData.iVal = weapOwnerDataVec[j];
 			if ( tmpOwnerData.charID != AEON_START + i )
 				continue;
 			if ( tmpOwnerData.isArmor > 0 )
