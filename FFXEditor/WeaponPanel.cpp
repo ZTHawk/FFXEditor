@@ -52,6 +52,7 @@ WeaponPanel::WeaponPanel( QWidget *p )
 	ui.setupUi(this);
 	
 	weaponData = new WeaponData();
+	lastSelectedWeaponsNameIndex = -1;
 	
 	int i,
 		j;
@@ -106,6 +107,7 @@ WeaponPanel::WeaponPanel( QWidget *p )
 	connect(ui.slotCnt, SIGNAL(currentIndexChanged(int)), this, SLOT(weaponSlotCnt_SelectedIndexChanged(int)));
 	connect(ui.weaponType, SIGNAL(currentIndexChanged(int)), this, SLOT(weaponType_SelectedIndexChanged(int)));
 	connect(ui.weaponModel, SIGNAL(currentIndexChanged(int)), this, SLOT(weaponModel_SelectedIndexChanged(int)));
+	connect(ui.weaponName, SIGNAL(currentIndexChanged(int)), this, SLOT(weaponName_SelectedIndexChanged(int)));
 	
 	// this will initialize stylesheet
 	int tmpVal;
@@ -365,7 +367,8 @@ void WeaponPanel::weaponType_SelectedIndexChanged( int index )
 	if ( index == -1 )
 		return;
 	
-	int lastSelectedIndex = index;
+	int tmpCurIndex = ui.weaponName->currentIndex(),
+		tmpLastSelWeapNameIndex = lastSelectedWeaponsNameIndex;
 	ui.weaponName->clear();
 	if ( index < CHAR_COUNT - 1 ) // -1 to ignore seymour 
 	{
@@ -375,10 +378,16 @@ void WeaponPanel::weaponType_SelectedIndexChanged( int index )
 	}else
 	{
 		ui.weaponName->addItem(QString::fromStdWString(guiList[GN_UNKNOWN]));
-		lastSelectedIndex = 0;
+		tmpCurIndex = 0;
 	}
-	
-	ui.weaponName->setCurrentIndex(lastSelectedIndex);
+	lastSelectedWeaponsNameIndex = tmpLastSelWeapNameIndex;
+	int wpnCnt = ui.weaponName->count();
+	if ( tmpCurIndex != lastSelectedWeaponsNameIndex
+		&& lastSelectedWeaponsNameIndex != -1 )
+		tmpCurIndex = lastSelectedWeaponsNameIndex;
+	if ( wpnCnt <= tmpCurIndex )
+		tmpCurIndex = wpnCnt - 1;
+	ui.weaponName->setCurrentIndex(tmpCurIndex);
 }
 
 void WeaponPanel::weaponModel_SelectedIndexChanged( int index )
@@ -388,4 +397,12 @@ void WeaponPanel::weaponModel_SelectedIndexChanged( int index )
 	
 	ui.weaponModelIndex->setVisible(index == 0);
 	
+}
+
+void WeaponPanel::weaponName_SelectedIndexChanged( int index )
+{
+	if ( index == -1 )
+		return;
+	
+	lastSelectedWeaponsNameIndex = index;
 }

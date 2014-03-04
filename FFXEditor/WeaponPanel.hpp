@@ -30,6 +30,7 @@ private:
 	WeaponData *weaponData;
 	vector<QComboBox*> abilityList;
 	int lastSelectedIndex;
+	int lastSelectedWeaponsNameIndex;
 	
 	bool getVariables( PWEAPONDATA wData );
 	void setVariables( WEAPONDATA wData );
@@ -42,6 +43,7 @@ protected slots:
 	void weaponSlotCnt_SelectedIndexChanged( int index );
 	void weaponType_SelectedIndexChanged( int index );
 	void weaponModel_SelectedIndexChanged( int index );
+	void weaponName_SelectedIndexChanged( int index );
 };
 
 #endif // WEAPON_PANEL_HPP
