@@ -4,6 +4,7 @@
 #include "info.hpp"
 #include "AeonPanel.hpp"
 #include "CharData.hpp"
+#include "globals.hpp"
 
 AeonPanel::AeonPanel( QWidget *p )
 	: MyPanel(p)
@@ -320,4 +321,38 @@ void AeonPanel::text_Click( )
 {
 	MyLabel *label = dynamic_cast<MyLabel*>(sender());
 	SendNotificationID(label->getInfoID());
+}
+
+void AeonPanel::slotUpdateWeaponOwner( QVector<int> weapOwnerDataVec )
+{
+	WeapOwnerData tmpOwnerData;
+	int j;
+	unsigned char oldWeapID,
+		oldShieldID;
+	for ( int i = 0; i < AEON_END - AEON_START; ++i )
+	{
+		oldWeapID = aeonData[i]->data->weaponID;
+		oldShieldID = aeonData[i]->data->shieldID;
+		for ( j = 0; j < weapOwnerDataVec.size(); ++j )
+		{
+			tmpOwnerData.i = weapOwnerDataVec[j];
+			if ( tmpOwnerData.charID != AEON_START + i )
+				continue;
+			if ( tmpOwnerData.isArmor > 0 )
+				oldShieldID = tmpOwnerData.weaponSlotIndex;
+			else
+				oldWeapID = tmpOwnerData.weaponSlotIndex;
+		}
+		if ( oldWeapID != aeonData[i]->data->weaponID
+			|| oldShieldID != aeonData[i]->data->shieldID )
+		{
+			int a = 1;
+			if ( a == 1 )
+			{
+				aeonData[i]->data->weaponID = oldWeapID;
+				aeonData[i]->data->shieldID = oldShieldID;
+				aeonData[i]->writeWeaponIDs_Data();
+			}
+		}
+	}
 }

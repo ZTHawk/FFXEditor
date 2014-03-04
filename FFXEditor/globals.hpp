@@ -41,4 +41,16 @@ extern vector<wstring> infoList;
 extern vector<wstring> itemNames;
 extern vector<wstring> keyItemNames;
 
+union WeapOwnerData
+{
+	int iVal;
+	struct
+	{
+		unsigned char charID;
+		unsigned char weaponSlotIndex;
+		unsigned char isArmor;
+		unsigned char dummy;
+	};
+};
+
 #endif // GLOBALS_HPP

@@ -37,6 +37,9 @@ private:
 protected slots:
 	void button_Click( );
 	void text_Click( );
+	
+public slots:
+	void slotUpdateWeaponOwner( QVector<int> weapOwnerDataVec );
 };
 
 #endif // AEON_PANEL_HPP

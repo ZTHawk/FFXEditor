@@ -37,6 +37,9 @@ private:
 	int arrayIndexToWeaponModelIndex( int index );
 	int weaponModelIndexToArrayIndex( unsigned short weaponModelIndex );
 	
+signals:
+	void updateWeaponOwner( QVector<int> weapOwnerDataVec );
+	
 protected slots:
 	void text_Click( );
 	void slotSelection_SelectedIndexChanged( int index );

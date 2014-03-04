@@ -81,6 +81,7 @@ public:
 	bool cheackData( );
 	bool readData( );
 	bool writeData( );
+	bool writeWeaponIDs_Data( );
 	
 	PCHARDATA data;
 	bool error;

@@ -324,7 +324,42 @@ bool WeaponPanel::checkData( int depth )
 
 bool WeaponPanel::writeData( int depth )
 {
-	return weaponData->writeData();
+	bool result = weaponData->writeData();
+	if ( result == true )
+	{
+		QVector<int> weapOwnerDataVec;
+		WEAPONDATA wData;
+		WeapOwnerData tmpOwnerData,
+			tmpOwnerData2;
+		int j;
+		for ( int i = 0; i < weaponData->curSize; ++i )
+		{
+			if ( weaponData->validWeaponSlot(i) == false )
+				continue;
+			wData = weaponData->data[i];
+			if ( wData.equippedCharID == 0xFF )
+				continue;
+			
+			tmpOwnerData.charID = wData.equippedCharID;
+			tmpOwnerData.weaponSlotIndex = i;
+			tmpOwnerData.isArmor = wData.isArmor;
+			for ( j = 0; j < weapOwnerDataVec.size(); ++j )
+			{
+				tmpOwnerData2.i = weapOwnerDataVec[j];
+				if ( tmpOwnerData2.charID != tmpOwnerData.charID )
+					continue;
+				if ( tmpOwnerData2.isArmor != tmpOwnerData.isArmor )
+					continue;
+				tmpOwnerData2.weaponSlotIndex = tmpOwnerData.weaponSlotIndex;
+				weapOwnerDataVec[j] = tmpOwnerData2.i;
+				break;
+			}
+			if ( j >= weapOwnerDataVec.size() )
+				weapOwnerDataVec.push_back(tmpOwnerData.i);
+		}
+		emit updateWeaponOwner(weapOwnerDataVec);
+	}
+	return result;
 }
 
 void WeaponPanel::text_Click( )

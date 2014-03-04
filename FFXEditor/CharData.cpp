@@ -37,3 +37,10 @@ bool CharData::writeData( )
 	
 	return result;
 }
+
+bool CharData::writeWeaponIDs_Data( )
+{
+	bool result = memMng->write(BASE_OFFSET + char_offsets[charID] + 41, &data->weaponID, 2);
+	
+	return result;
+}

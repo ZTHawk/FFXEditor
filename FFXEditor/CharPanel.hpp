@@ -41,6 +41,9 @@ private:
 protected slots:
 	void buttonClicked( );
 	void menuBoxSelectedIndexChanged( int index );
+	
+public slots:
+	void slotUpdateWeaponOwner( QVector<int> weapOwnerDataVec );
 };
 
 #endif // CHAR_PANEL_HPP

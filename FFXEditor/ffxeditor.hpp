@@ -23,6 +23,18 @@ public:
 	void setInfo( QString msg );
 	
 private:
+	enum PANEL_INDEXES
+	{
+		PANEL_CHAR = 0,
+		PANEL_ITEM,
+		PANEL_AEON,
+		PANEL_OVERDRIVE,
+		PANEL_WEAPON,
+		PANEL_GLOBAL,
+		PANEL_BATTLE,
+		
+		PANEL_COUNT,
+	};
 	Ui::FFXEditorClass ui;
 	vector<MyPanel*> panelsMenu;
 	

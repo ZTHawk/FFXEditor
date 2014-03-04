@@ -63,13 +63,14 @@ FFXEditor::FFXEditor(QWidget *parent, Qt::WFlags flags)
 	ui.saveButton->setMenu(saveMenu);
 	ui.saveButton->setText(QString::fromStdWString(guiList[GN_SAVE]));
 	
-	panelsMenu.push_back(new CharPanel(ui.containerMain));
-	panelsMenu.push_back(new ItemPanel(ui.containerMain));
-	panelsMenu.push_back(new AeonPanel(ui.containerMain));
-	panelsMenu.push_back(new OverdrivesPanel(ui.containerMain));
-	panelsMenu.push_back(new WeaponPanel(ui.containerMain));
-	panelsMenu.push_back(new GlobalPanel(ui.containerMain));
-	panelsMenu.push_back(new BattlePanel(ui.containerMain));
+	panelsMenu.resize(PANEL_COUNT);
+	panelsMenu[PANEL_CHAR] = new CharPanel(ui.containerMain);
+	panelsMenu[PANEL_ITEM] = new ItemPanel(ui.containerMain);
+	panelsMenu[PANEL_AEON] = new AeonPanel(ui.containerMain);
+	panelsMenu[PANEL_OVERDRIVE] = new OverdrivesPanel(ui.containerMain);
+	panelsMenu[PANEL_WEAPON] = new WeaponPanel(ui.containerMain);
+	panelsMenu[PANEL_GLOBAL] = new GlobalPanel(ui.containerMain);
+	panelsMenu[PANEL_BATTLE] = new BattlePanel(ui.containerMain);
 	
 	connect(ui.reloadButton, SIGNAL(clicked(bool)), this, SLOT(reloadButton_Click()));
 	connect(ui.saveButton, SIGNAL(clicked(bool)), this, SLOT(SaveButton_Click()));
@@ -78,6 +79,8 @@ FFXEditor::FFXEditor(QWidget *parent, Qt::WFlags flags)
 	connect(reloadAction2, SIGNAL(triggered(bool)), this, SLOT(reloadButtonAll_Click()));
 	connect(saveAction2, SIGNAL(triggered(bool)), this, SLOT(saveButtonAll_Click()));
 	connect(ui.menuBox, SIGNAL(currentIndexChanged(int)), this, SLOT(menuBox_SelectedIndexChanged(int)));
+	connect(panelsMenu[PANEL_WEAPON], SIGNAL(updateWeaponOwner(QVector<int>)), panelsMenu[PANEL_CHAR], SLOT(slotUpdateWeaponOwner(QVector<int>)));
+	connect(panelsMenu[PANEL_WEAPON], SIGNAL(updateWeaponOwner(QVector<int>)), panelsMenu[PANEL_AEON], SLOT(slotUpdateWeaponOwner(QVector<int>)));
 	
 	ui.reloadButton->setShortcut(QKeySequence("Ctrl+R"));
 	ui.saveButton->setShortcut(QKeySequence::Save);
