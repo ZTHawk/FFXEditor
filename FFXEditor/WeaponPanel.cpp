@@ -85,7 +85,8 @@ WeaponPanel::WeaponPanel( QWidget *p )
 		for ( j = 0; j < WEAPON_ABILITY_NAMES_SIZE; ++j )
 			abilityList[i]->addItem(QString::fromStdWString(weaponAbilityNames[j]));
 	
-	ui.available->setText(QString::fromStdWString(guiList[GN_WP_AVAIL]));
+	ui.available_Text->setText(QString::fromStdWString(guiList[GN_WP_AVAIL]));
+	ui.hidden->setText(QString::fromStdWString(guiList[GN_WP_HIDDEN]));
 	ui.weaponType_Text->setText(QString::fromStdWString(guiList[GN_WP_TYPE]));
 	ui.weaponName_Text->setText(QString::fromStdWString(guiList[GN_WP_NAME]));
 	ui.armorWeapon->setText(QString::fromStdWString(guiList[GN_WP_ISARM]));
@@ -169,6 +170,7 @@ bool WeaponPanel::getVariables( PWEAPONDATA wData )
 		wData->special_properties |= SWF_BROTHERHOOD;
 	}else if ( wData->destinationCharID >= CHAR_COUNT )
 		wData->special_properties |= SWF_HIDDEN;
+	setBitmask(wData->special_properties, SWF_HIDDEN, ui.hidden->isChecked());
 	
 	if ( wData->available > 0 )
 	{
@@ -246,7 +248,8 @@ bool WeaponPanel::getVariables( PWEAPONDATA wData )
 void WeaponPanel::setVariables( WEAPONDATA wData )
 {
 	ui.available->setChecked(wData.available > 0);
-	
+	ui.hidden->setChecked((wData.special_properties & SWF_HIDDEN) > 0);
+
 	if ( wData.destinationCharID >= CHAR_COUNT_ALL )
 		wData.destinationCharID = CHAR_COUNT_ALL;
 	ui.weaponType->setCurrentIndex(wData.destinationCharID);

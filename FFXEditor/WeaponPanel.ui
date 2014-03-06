@@ -76,22 +76,6 @@ QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
     <string notr="true">TextLabel</string>
    </property>
   </widget>
-  <widget class="QCheckBox" name="available">
-   <property name="geometry">
-    <rect>
-     <x>201</x>
-     <y>4</y>
-     <width>70</width>
-     <height>17</height>
-    </rect>
-   </property>
-   <property name="layoutDirection">
-    <enum>Qt::RightToLeft</enum>
-   </property>
-   <property name="text">
-    <string notr="true">CheckBox</string>
-   </property>
-  </widget>
   <widget class="MyLabel" name="equippedChar_Text">
    <property name="geometry">
     <rect>
@@ -427,6 +411,64 @@ QListWidget::item:selected{background-color: rgba(50, 150, 255, 220);}</string>
    <property name="maxVisibleItems">
     <number>30</number>
    </property>
+  </widget>
+  <widget class="QCheckBox" name="hidden">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>10</y>
+     <width>70</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="text">
+    <string notr="true">CheckBox</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="widget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>198</x>
+     <y>10</y>
+     <width>121</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="margin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QLabel" name="available_Text">
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="available">
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="horizontalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
   </widget>
  </widget>
  <customwidgets>

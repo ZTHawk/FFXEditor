@@ -171,6 +171,7 @@ enum GUI_NAMES
 		GN_BP_ANIMSPD,
 		GN_BP_STAND,
 		GN_BP_RUN,
+	GN_WP_HIDDEN,
 };
 
 extern vector<wstring> guiList;
@@ -336,6 +337,7 @@ static const char *guiList_en =
 		"Animation speed\\"
 		"Stand at location\\"
 		"Run to location\\"
+	"Hidden\\" // Weapons
 	"\0";
 
 #endif // GUI_NAMES_HPP
