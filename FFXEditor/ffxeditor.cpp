@@ -351,6 +351,8 @@ void FFXEditor::initData( bool errorOccured )
 	bool result = true;
 	for ( size_t i = 0; i < panelsMenu.size(); ++i )
 	{
+		if ( panelsMenu[i] == NULL )
+			continue;
 		if ( result == true )
 			result &= panelsMenu[i]->initData();
 		panelsMenu[i]->setVisible(i == 0);
@@ -375,7 +377,11 @@ void FFXEditor::reloadButtonAll_Click( )
 	
 	bool result = true;
 	for ( size_t i = 0; i < panelsMenu.size(); ++i )
+	{
+		if ( panelsMenu[i] == NULL )
+			continue;
 		result &= panelsMenu[i]->reloadData();
+	}
 }
 
 void FFXEditor::saveButtonAll_Click( )
@@ -385,15 +391,23 @@ void FFXEditor::saveButtonAll_Click( )
 	
 	bool result = true;
 	for ( size_t i = 0; i < panelsMenu.size(); ++i )
+	{
+		if ( panelsMenu[i] == NULL )
+			continue;
 		if ( result == true )
 			result &= panelsMenu[i]->checkData();
+	}
 	
 	if ( result == false )
 		return;
 	
 	for ( size_t i = 0; i < panelsMenu.size(); ++i )
+	{
+		if ( panelsMenu[i] == NULL )
+			continue;
 		if ( result == true )
 			result &= panelsMenu[i]->writeData();
+	}
 	
 	if ( result == true )
 		SendNotification("");
@@ -464,5 +478,9 @@ void FFXEditor::SaveButton_Click( )
 void FFXEditor::menuBox_SelectedIndexChanged( int index )
 {
 	for ( int i = static_cast<int>(panelsMenu.size() - 1); i >= 0; --i )
+	{
+		if ( panelsMenu[i] == NULL )
+			continue;
 		panelsMenu[i]->setVisible(i == index);
+	}
 }
