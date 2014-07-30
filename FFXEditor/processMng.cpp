@@ -95,7 +95,7 @@ bool EnablePriv( LPCWSTR lpszPriv ) // by Napalm
 BOOL CALLBACK EnumWindowsHandle( HWND hWnd , LPARAM lParam )
 {
 	const int bufferSize = 100;
-    TCHAR fileName[bufferSize];
+	TCHAR fileName[bufferSize];
 	TCHAR windowText[bufferSize];
 	TCHAR wm_Text[bufferSize];
 	memset(fileName, 0, sizeof(TCHAR) * bufferSize);
@@ -107,16 +107,33 @@ BOOL CALLBACK EnumWindowsHandle( HWND hWnd , LPARAM lParam )
 	
 	(*logManager)(LogManager::LOG_DEBUG)
 		<< L"New item: "
-		<< reinterpret_cast<int>(hWnd);
+		<< reinterpret_cast<int>(hWnd)
+		<< LogManager::endl;
 	
 	if ( IsWindowVisible(hWnd) == false )
 		return true;
 	
 	(*logManager)(LogManager::LOG_DEBUG)
-		<< L"  Visible";
+		<< L"  Visible"
+		<< LogManager::endl;
 	
-	if ( SendMessage(hWnd, WM_GETTEXT, bufferSize, (LPARAM)wm_Text) == false )
+	int length = SendMessage(hWnd, WM_GETTEXTLENGTH, 0, 0);
+	if ( length == -1 )
 		return true;
+	
+	(*logManager)(LogManager::LOG_DEBUG)
+		<< L"  WM_GETTEXTLENGTH: "
+		<< length
+		<< LogManager::endl;
+	
+	LRESULT res = SendMessage(hWnd, WM_GETTEXT, qMin(bufferSize, length + 1), (LPARAM)wm_Text);
+	if ( res == 0 )
+		return true;
+	
+	(*logManager)(LogManager::LOG_DEBUG)
+		<< L"  WM_GETTEXT: "
+		<< wm_Text
+		<< LogManager::endl;
 	
 	DWORD dwProcessId = 0;
 	DWORD dwThreadId = GetWindowThreadProcessId(hWnd, &dwProcessId);
@@ -149,7 +166,7 @@ BOOL CALLBACK EnumWindowsHandle( HWND hWnd , LPARAM lParam )
 	
 	if ( GetWindowText(hWnd, (LPWSTR)windowText, bufferSize) == 0 )
 		return true;
-    
+	
 	bool isUnicode = false;
 #if defined UNICODE
 	isUnicode = true;
@@ -170,7 +187,7 @@ BOOL CALLBACK EnumWindowsHandle( HWND hWnd , LPARAM lParam )
 		<< emulatorProcessID
 		<< LogManager::endl;
 	
-    return true;
+	return false;
 }
 
 bool readFromProcess( int address , void *buf , int len )
