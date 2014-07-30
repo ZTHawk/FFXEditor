@@ -141,13 +141,16 @@ void setBitmask( unsigned char &target , unsigned char mask , bool set )
 unsigned int findOffsetOfByteArray( const unsigned char searchByteArray[] , int byteArrayLen , unsigned int searchOffset , unsigned int searchOffsetEnd )
 {
 	unsigned char byteArray[MAP_ARRAY_SIZE];
-	bool skipping = false;
+	bool skipping = false,
+		readOk = true;
 	int pos = 0,
 		pos1 = 0,
 		pos2 = 0;
 	while ( searchOffset < searchOffsetEnd )
 	{
-		memMng->read(searchOffset, byteArray, MAP_ARRAY_SIZE);
+		readOk = memMng->read(searchOffset, byteArray, MAP_ARRAY_SIZE);
+		if ( readOk == false )
+			break;
 		
 		for ( pos = 0; pos < MAP_ARRAY_SIZE; ++pos )
 		{
