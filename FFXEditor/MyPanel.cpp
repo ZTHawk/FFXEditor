@@ -6,7 +6,7 @@ bool MyPanel::checkEntry( QLineEdit *textBox , void *buf , int type )
 {
 	bool result = true;
 	QString str = textBox->text();
-	QByteArray arr = str.toAscii();
+	QByteArray arr = str.toLatin1();
 	char *cStr = arr.data();
 	result &= stringToValue_Check(cStr,
 		buf,
