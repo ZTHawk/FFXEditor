@@ -12,7 +12,8 @@ using std::vector;
 #define FRAME_WIDTH  640
 #define FRAME_HEIGHT 560
 
-#define FFXEDITOR_VERSION "2.0.2"
+#define STR_HELPER(x) #x
+#define STR(x) STR_HELPER(x)
 
 enum
 {
@@ -61,11 +62,11 @@ enum MAX_DATA_VALUES
 	DATA_ATTRIBUTE = 255,
 	DATA_UCHAR = UCHAR_MAX,
 	
-	DATA_MP = 9999,
 	DATA_OD_MODES = 65535,
 	DATA_USHORT = USHRT_MAX,
 	
-	DATA_HP = 99999,
+	DATA_MP = 9999999, // default max is 9999
+	DATA_HP = 9999999, // default max is 99999
 	DATA_BITMASK = UINT_MAX,
 	DATA_UINT = UINT_MAX,
 };
