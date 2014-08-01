@@ -493,10 +493,6 @@
 				RelativePath=".\FFXEditor\processMng.hpp"
 				>
 			</File>
-			<File
-				RelativePath=".\FFXEditor\resource.h"
-				>
-			</File>
 			<Filter
 				Name="constants"
 				>
@@ -1640,6 +1636,10 @@
 				RelativePath=".\FFXEditor\FFXEditor.rc"
 				>
 			</File>
+			<File
+				RelativePath=".\FFXEditor\resource"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Generierte Dateien"
@@ -2176,10 +2176,6 @@
 				</File>
 			</Filter>
 		</Filter>
-		<File
-			RelativePath=".\FFXEditor\resource"
-			>
-		</File>
 	</Files>
 	<Globals>
 		<Global
