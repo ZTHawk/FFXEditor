@@ -45,7 +45,7 @@ bool WeaponData::cheackData( )
 
 bool WeaponData::readData( )
 {
-	bool result = memMng->read(BASE_OFFSET + OFFSET_WEAPON_DATA, data, sizeof(WEAPONDATA) * WEAPON_MAX_SIZE);
+	bool result = memMng->read(BASE_OFFSET + OFFSET_WEAPON_DATA, data, sizeof(WEAPONDATA) * WEAPON_MAX_SIZE) != -1;
 	curSize = 0;
 	
 	for ( int i = WEAPON_MAX_SIZE - 1; i >= 0; --i )

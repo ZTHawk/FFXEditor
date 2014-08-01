@@ -32,9 +32,20 @@ int ProcOpen( int procID )
 
 bool ProcReadMem( int handle , int address , void *buf , int len , int &bytesRead )
 {
-	return ReadProcessMemory(reinterpret_cast<HANDLE>(handle),
+	bool retVal = ReadProcessMemory(reinterpret_cast<HANDLE>(handle),
 		reinterpret_cast<void*>(address),
 		buf, len, reinterpret_cast<SIZE_T*>(&bytesRead));
+	if ( retVal == false )
+	{
+		switch ( GetLastError() )
+		{
+		case 299:
+			return true; // only parts were read
+		default:
+			break;
+		}
+	}
+	return retVal;
 }
 
 bool ProcWriteMem( int handle , int address , void *buf , int len , int &bytesWritten )

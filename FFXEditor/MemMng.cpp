@@ -24,31 +24,27 @@ bool MemMng::init( int procID )
 	return (hProcess != 0);
 }
 
-bool MemMng::read( int address , void *buf , int len )
+int MemMng::read( int address , void *buf , int len )
 {
 	static int bytesRead = 0;
 	static bool result;
 	if ( buf == NULL )
-		return false;
+		return -1;
 	if ( len < 1 )
-		return false;
+		return -1;
 	if ( hProcess == 0 )
-		return false;
+		return -1;
 	result = ProcReadMem(hProcess, address, buf, len, bytesRead);
 	if ( result == false )
-		return false;
-	if ( buf == NULL )
-		return false;
-	if ( bytesRead < len )
-		return false;
-	return true;
+		return -1;
+	return bytesRead;
 }
 
 int MemMng::readInt( int address , bool &result )
 {
 	static int value;
 	value = 0;
-	result &= read(address, &value, 4);
+	result &= read(address, &value, 4) != -1;
 	return value;
 }
 
@@ -56,7 +52,7 @@ short MemMng::readShort( int address , bool &result )
 {
 	static short value;
 	value = 0;
-	result &= read(address, &value, 2);
+	result &= read(address, &value, 2) != -1;
 	return value;
 }
 
@@ -64,7 +60,7 @@ unsigned char MemMng::readByte( int address , bool &result )
 {
 	static unsigned char value;
 	value = 0;
-	result &= read(address, &value, 1);
+	result &= read(address, &value, 1) != -1;
 	return value;
 }
 

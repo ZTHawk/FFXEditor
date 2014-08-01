@@ -70,9 +70,9 @@ bool ItemData::readData( )
 	memset(itemAmountList, 0, sizeof(unsigned char) * 256);
 	memset(keyItems, 0, sizeof(unsigned char) * 7);
 	
-	result &= memMng->read(BASE_OFFSET + OFFSET_ITEMS_ID_LIST, itemIDList, sizeof(ITEM_ID_LIST) * 256);
-	result &= memMng->read(BASE_OFFSET + OFFSET_ITEMS_AMOUNT_LIST, itemAmountList, sizeof(unsigned char) * 256);
-	result &= memMng->read(BASE_OFFSET + OFFSET_KEY_ITEM_BITMASK, keyItems, sizeof(unsigned char) * 7);
+	result &= memMng->read(BASE_OFFSET + OFFSET_ITEMS_ID_LIST, itemIDList, sizeof(ITEM_ID_LIST) * 256) != -1;
+	result &= memMng->read(BASE_OFFSET + OFFSET_ITEMS_AMOUNT_LIST, itemAmountList, sizeof(unsigned char) * 256) != -1;
+	result &= memMng->read(BASE_OFFSET + OFFSET_KEY_ITEM_BITMASK, keyItems, sizeof(unsigned char) * 7) != -1;
 	
 	return result;
 }

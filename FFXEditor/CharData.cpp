@@ -26,7 +26,7 @@ bool CharData::cheackData( )
 
 bool CharData::readData( )
 {
-	bool result = memMng->read(BASE_OFFSET + char_offsets[charID], data, sizeof(CHARDATA));
+	bool result = memMng->read(BASE_OFFSET + char_offsets[charID], data, sizeof(CHARDATA)) != -1;
 	
 	return result;
 }

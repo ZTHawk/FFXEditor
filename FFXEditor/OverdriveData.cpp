@@ -23,7 +23,7 @@ bool OverdriveData::cheackData( )
 
 bool OverdriveData::readData( )
 {
-	bool result = memMng->read(BASE_OFFSET + OFFSET_OVERDRIVES_BITMASK, overdrive_list, sizeof(unsigned int) * 4);
+	bool result = memMng->read(BASE_OFFSET + OFFSET_OVERDRIVES_BITMASK, overdrive_list, sizeof(unsigned int) * 4) != -1;
 	
 	return result;
 }
