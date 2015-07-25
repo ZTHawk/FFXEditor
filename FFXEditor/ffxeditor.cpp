@@ -454,12 +454,12 @@ void FFXEditor::saveButtonSection_Click( )
 	
 	int panelIndex = ui.menuBox->currentIndex();
 	bool result = true;
-	result &= panelsMenu[panelIndex]->checkData();
+	result &= panelsMenu[panelIndex]->checkData(1);
 	
 	if ( result == false )
 		return;
 	
-	result &= panelsMenu[panelIndex]->writeData();
+	result &= panelsMenu[panelIndex]->writeData(1);
 	
 	if ( result == true )
 		SendNotification("");

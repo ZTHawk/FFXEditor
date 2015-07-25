@@ -195,6 +195,16 @@ bool BattlePanel::reloadData( int depth )
 bool BattlePanel::checkData( int depth )
 {
 	bool result = true;
+	// do not allow battle data to be saved via save all
+	if( depth == 0 )
+		return result;
+	
+	if ( locked == true )
+		return result;
+	
+	if ( bData.size() == 0 )
+		return result;
+	
 	if ( depth == 2 )
 	{
 		result &= bData[lastIndex]->cheackData();
@@ -210,6 +220,16 @@ bool BattlePanel::checkData( int depth )
 bool BattlePanel::writeData( int depth )
 {
 	bool result = true;
+	// do not allow battle data to be saved via save all
+	if( depth == 0 )
+		return result;
+	
+	if ( locked == true )
+		return result;
+	
+	if( bData.size() == 0 )
+		return result;
+	
 	getVariables(bData[lastIndex]->data);
 	if ( depth == 2 )
 	{
