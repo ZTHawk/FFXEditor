@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Dateien">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;cxx;c;def</Extensions>
+    </Filter>
+    <Filter Include="Source Dateien\utils">
+      <UniqueIdentifier>{c7b163d0-372f-4d4a-b350-c99d74caa098}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Dateien\data">
+      <UniqueIdentifier>{50a02c38-847d-4033-83f7-d0dbb7ff4703}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Dateien\panel">
+      <UniqueIdentifier>{60a0886f-b9dc-4380-9150-f8735d4b6648}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Dateien">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+    </Filter>
+    <Filter Include="Header Dateien\constants">
+      <UniqueIdentifier>{b9ce7b6a-cff8-472e-9c2b-71444a676554}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Dateien\utils">
+      <UniqueIdentifier>{432f93f2-ac00-49c8-801b-63cbb51f3c2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Dateien\data">
+      <UniqueIdentifier>{30d89c31-0b24-43a9-a598-7996e3c41ed2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Dateien\panel">
+      <UniqueIdentifier>{e9384cbb-4222-489a-b0b2-fcfb989e239f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Form Dateien">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Resource Dateien">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generierte Dateien">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;hpp;cpp</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generierte Dateien\Release">
+      <UniqueIdentifier>{b8612ac2-be6f-4cd5-ad3c-93dbc30511c1}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generierte Dateien\Debug">
+      <UniqueIdentifier>{122dd114-d078-474b-b930-22a0991554b0}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FFXEditor\ffxeditor.cpp">
+      <Filter>Source Dateien</Filter>
+    </ClCompile>
+    <ClCompile Include="FFXEditor\main.cpp">
+      <Filter>Source Dateien</Filter>
+    </ClCompile>
+    <ClCompile Include="FFXEditor\MemMng.cpp">
+      <Filter>Source Dateien</Filter>
+    </ClCompile>
+    <ClCompile Include="FFXEditor\processMng.cpp">
+      <Filter>Source Dateien</Filter>
+    </ClCompile>
+    <ClCompile Include="FFXEditor\cfgFileMng.cpp">
+      <Filter>Source Dateien\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="FFXEditor\logManager.cpp">
+      <Filter>Source Dateien\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="FFXEditor\utils.cpp">
+      <Filter>Source Dateien\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="FFXEditor\BattleData.cpp">
+      <Filter>Source Dateien\data</Filter>
+    </ClCompile>
+    <ClCompile Include="FFXEditor\CharData.cpp">
+      <Filter>Source Dateien\data</Filter>
+    </ClCompile>
+    <ClCompile Include="FFXEditor\ItemData.cpp">
+      <Filter>Source Dateien\data</Filter>
+    </ClCompile>
+    <ClCompile Include="FFXEditor\OverdriveData.cpp">
+      <Filter>Source Dateien\data</Filter>
+    </ClCompile>
+    <ClCompile Include="FFXEditor\WeaponData.cpp">
+      <Filter>Source Dateien\data</Filter>
+    </ClCompile>
+    <ClCompile Include="FFXEditor\AeonPanel.cpp">
+      <Filter>Source Dateien\panel</Filter>
+    </ClCompile>
+    <ClCompile Include="FFXEditor\BattlePanel.cpp">
+      <Filter>Source Dateien\panel</Filter>
+    </ClCompile>
+    <ClCompile Include="FFXEditor\CharPanel.cpp">
+      <Filter>Source Dateien\panel</Filter>
+    </ClCompile>
+    <ClCompile Include="FFXEditor\CharPanelAbility.cpp">
+      <Filter>Source Dateien\panel</Filter>
+    </ClCompile>
+    <ClCompile Include="FFXEditor\CharPanelData.cpp">
+      <Filter>Source Dateien\panel</Filter>
+    </ClCompile>
+    <ClCompile Include="FFXEditor\GlobalPanel.cpp">
+      <Filter>Source Dateien\panel</Filter>
+    </ClCompile>
+    <ClCompile Include="FFXEditor\ItemPanel.cpp">
+      <Filter>Source Dateien\panel</Filter>
+    </ClCompile>
+    <ClCompile Include="FFXEditor\MyPanel.cpp">
+      <Filter>Source Dateien\panel</Filter>
+    </ClCompile>
+    <ClCompile Include="FFXEditor\OverdrivesPanel.cpp">
+      <Filter>Source Dateien\panel</Filter>
+    </ClCompile>
+    <ClCompile Include="FFXEditor\WeaponPanel.cpp">
+      <Filter>Source Dateien\panel</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\qrc_ffxeditor.cpp">
+      <Filter>Generierte Dateien</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_AeonPanel.cpp">
+      <Filter>Generierte Dateien\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_BattlePanel.cpp">
+      <Filter>Generierte Dateien\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_CharPanel.cpp">
+      <Filter>Generierte Dateien\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_CharPanelAbility.cpp">
+      <Filter>Generierte Dateien\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_CharPanelData.cpp">
+      <Filter>Generierte Dateien\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_ffxeditor.cpp">
+      <Filter>Generierte Dateien\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_GlobalPanel.cpp">
+      <Filter>Generierte Dateien\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_ItemPanel.cpp">
+      <Filter>Generierte Dateien\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_MyLabel.cpp">
+      <Filter>Generierte Dateien\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_OverdrivesPanel.cpp">
+      <Filter>Generierte Dateien\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_WeaponPanel.cpp">
+      <Filter>Generierte Dateien\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_AeonPanel.cpp">
+      <Filter>Generierte Dateien\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_BattlePanel.cpp">
+      <Filter>Generierte Dateien\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_CharPanel.cpp">
+      <Filter>Generierte Dateien\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_CharPanelAbility.cpp">
+      <Filter>Generierte Dateien\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_CharPanelData.cpp">
+      <Filter>Generierte Dateien\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_ffxeditor.cpp">
+      <Filter>Generierte Dateien\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_GlobalPanel.cpp">
+      <Filter>Generierte Dateien\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_ItemPanel.cpp">
+      <Filter>Generierte Dateien\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_MyLabel.cpp">
+      <Filter>Generierte Dateien\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_OverdrivesPanel.cpp">
+      <Filter>Generierte Dateien\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_WeaponPanel.cpp">
+      <Filter>Generierte Dateien\Debug</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FFXEditor\globals.hpp">
+      <Filter>Header Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="FFXEditor\MemMng.hpp">
+      <Filter>Header Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="FFXEditor\processMng.hpp">
+      <Filter>Header Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="FFXEditor\ability_constants.hpp">
+      <Filter>Header Dateien\constants</Filter>
+    </ClInclude>
+    <ClInclude Include="FFXEditor\constants.hpp">
+      <Filter>Header Dateien\constants</Filter>
+    </ClInclude>
+    <ClInclude Include="FFXEditor\guiNames.hpp">
+      <Filter>Header Dateien\constants</Filter>
+    </ClInclude>
+    <ClInclude Include="FFXEditor\info.hpp">
+      <Filter>Header Dateien\constants</Filter>
+    </ClInclude>
+    <ClInclude Include="FFXEditor\item_constants.hpp">
+      <Filter>Header Dateien\constants</Filter>
+    </ClInclude>
+    <ClInclude Include="FFXEditor\nameIdData.hpp">
+      <Filter>Header Dateien\constants</Filter>
+    </ClInclude>
+    <ClInclude Include="FFXEditor\offsets.hpp">
+      <Filter>Header Dateien\constants</Filter>
+    </ClInclude>
+    <ClInclude Include="FFXEditor\overdrive_constants.hpp">
+      <Filter>Header Dateien\constants</Filter>
+    </ClInclude>
+    <ClInclude Include="FFXEditor\weapon_constants.hpp">
+      <Filter>Header Dateien\constants</Filter>
+    </ClInclude>
+    <ClInclude Include="FFXEditor\cfgFileMng.hpp">
+      <Filter>Header Dateien\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="FFXEditor\logManager.hpp">
+      <Filter>Header Dateien\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="FFXEditor\string_helper.hpp">
+      <Filter>Header Dateien\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="FFXEditor\utils.hpp">
+      <Filter>Header Dateien\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="FFXEditor\BattleData.hpp">
+      <Filter>Header Dateien\data</Filter>
+    </ClInclude>
+    <ClInclude Include="FFXEditor\CharData.hpp">
+      <Filter>Header Dateien\data</Filter>
+    </ClInclude>
+    <ClInclude Include="FFXEditor\ItemData.hpp">
+      <Filter>Header Dateien\data</Filter>
+    </ClInclude>
+    <ClInclude Include="FFXEditor\OverdriveData.hpp">
+      <Filter>Header Dateien\data</Filter>
+    </ClInclude>
+    <ClInclude Include="FFXEditor\WeaponData.hpp">
+      <Filter>Header Dateien\data</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_AeonPanel.h">
+      <Filter>Generierte Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_BattlePanel.h">
+      <Filter>Generierte Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_CharPanel.h">
+      <Filter>Generierte Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_CharPanelAbility.h">
+      <Filter>Generierte Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_CharPanelData.h">
+      <Filter>Generierte Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_ffxeditor.h">
+      <Filter>Generierte Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_GlobalPanel.h">
+      <Filter>Generierte Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_ItemPanel.h">
+      <Filter>Generierte Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_OverdrivesPanel.h">
+      <Filter>Generierte Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_WeaponPanel.h">
+      <Filter>Generierte Dateien</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FFXEditor\resource">
+      <Filter>Resource Dateien</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="FFXEditor\FFXEditor.ico">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="FFXEditor\FFXEditor.rc">
+      <Filter>Resource Dateien</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="FFXEditor\ffxeditor.hpp">
+      <Filter>Header Dateien</Filter>
+    </CustomBuild>
+    <CustomBuild Include="FFXEditor\AeonPanel.hpp">
+      <Filter>Header Dateien\panel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="FFXEditor\BattlePanel.hpp">
+      <Filter>Header Dateien\panel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="FFXEditor\CharPanel.hpp">
+      <Filter>Header Dateien\panel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="FFXEditor\CharPanelAbility.hpp">
+      <Filter>Header Dateien\panel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="FFXEditor\CharPanelData.hpp">
+      <Filter>Header Dateien\panel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="FFXEditor\GlobalPanel.hpp">
+      <Filter>Header Dateien\panel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="FFXEditor\ItemPanel.hpp">
+      <Filter>Header Dateien\panel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="FFXEditor\MyLabel.hpp">
+      <Filter>Header Dateien\panel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="FFXEditor\MyPanel.hpp">
+      <Filter>Header Dateien\panel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="FFXEditor\OverdrivesPanel.hpp">
+      <Filter>Header Dateien\panel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="FFXEditor\WeaponPanel.hpp">
+      <Filter>Header Dateien\panel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="FFXEditor\AeonPanel.ui">
+      <Filter>Form Dateien</Filter>
+    </CustomBuild>
+    <CustomBuild Include="FFXEditor\BattlePanel.ui">
+      <Filter>Form Dateien</Filter>
+    </CustomBuild>
+    <CustomBuild Include="FFXEditor\CharPanel.ui">
+      <Filter>Form Dateien</Filter>
+    </CustomBuild>
+    <CustomBuild Include="FFXEditor\CharPanelAbility.ui">
+      <Filter>Form Dateien</Filter>
+    </CustomBuild>
+    <CustomBuild Include="FFXEditor\CharPanelData.ui">
+      <Filter>Form Dateien</Filter>
+    </CustomBuild>
+    <CustomBuild Include="FFXEditor\ffxeditor.ui">
+      <Filter>Form Dateien</Filter>
+    </CustomBuild>
+    <CustomBuild Include="FFXEditor\GlobalPanel.ui">
+      <Filter>Form Dateien</Filter>
+    </CustomBuild>
+    <CustomBuild Include="FFXEditor\ItemPanel.ui">
+      <Filter>Form Dateien</Filter>
+    </CustomBuild>
+    <CustomBuild Include="FFXEditor\OverdrivesPanel.ui">
+      <Filter>Form Dateien</Filter>
+    </CustomBuild>
+    <CustomBuild Include="FFXEditor\WeaponPanel.ui">
+      <Filter>Form Dateien</Filter>
+    </CustomBuild>
+    <CustomBuild Include="FFXEditor\ffxeditor.qrc">
+      <Filter>Resource Dateien</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

@@ -1,7 +1,7 @@
 /*
     FFX-Editor is a cheat tool for PCSX2 and Final Fantasy X.
 
-    Copyright (C) 2014  Karl Zmuda Trzebiatowski <karl.zmuda.trzebiatowski at gmail.com>
+    Copyright (C) 2014  Karol von Zmuda Trzebiatowski <karol.von.zmuda.trzebiatowski at gmail.com>
 
 	This file is part of FFX-Editor.
 
@@ -40,10 +40,10 @@ ItemPanel::ItemPanel( QWidget *p )
 	itemData = new ItemData();
 	
 	QHeaderView *hHeader = ui.items_table->horizontalHeader();
-	hHeader->setResizeMode(0, QHeaderView::Fixed);
-	hHeader->setResizeMode(1, QHeaderView::Fixed);
-	hHeader->setResizeMode(2, QHeaderView::Fixed);
-	hHeader->setResizeMode(3, QHeaderView::Fixed);
+	hHeader->setSectionResizeMode(0, QHeaderView::Fixed);
+	hHeader->setSectionResizeMode(1, QHeaderView::Fixed);
+	hHeader->setSectionResizeMode(2, QHeaderView::Fixed);
+	hHeader->setSectionResizeMode(3, QHeaderView::Fixed);
 	ui.items_table->setColumnWidth(0, 135);
 	ui.items_table->setColumnWidth(1, 30);
 	ui.items_table->setColumnWidth(2, 135);

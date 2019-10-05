@@ -1,7 +1,7 @@
 /*
     FFX-Editor is a cheat tool for PCSX2 and Final Fantasy X.
 
-    Copyright (C) 2014  Karl Zmuda Trzebiatowski <karl.zmuda.trzebiatowski at gmail.com>
+    Copyright (C) 2014  Karol von Zmuda Trzebiatowski <karol.von.zmuda.trzebiatowski at gmail.com>
 
 	This file is part of FFX-Editor.
 
@@ -47,7 +47,7 @@
 #include <QAction>
 #include <QMenu>
 
-FFXEditor::FFXEditor(QWidget *parent, Qt::WFlags flags)
+FFXEditor::FFXEditor(QWidget *parent, Qt::WindowFlags flags)
 	: QMainWindow(parent, flags)
 {
 	ui.setupUi(this);

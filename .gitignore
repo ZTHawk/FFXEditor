@@ -1,0 +1,9 @@
+/.vs
+/GeneratedFiles
+/Win32
+/x64
+/*.user
+/*.ncb
+/*.suo
+/*.VC.db
+/*.VC.opendb
